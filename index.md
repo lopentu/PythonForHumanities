@@ -23,4 +23,4 @@ repository_url: https://github.com/lopentu/PythonForHumanities
 |   14   |  12/12   |文本資料分析與自然語言處理套件介紹 |
 |   15   |  12/19   |資料視覺化套件介紹                 |
 |   16   |  12/26   |期末報告                           |
-|   18   |  01/02   |期末報告繳交                       |
+|   17   |  01/02   |期末報告繳交                       |
