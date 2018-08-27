@@ -14,6 +14,10 @@ repository_url: https://github.com/lopentu/PythonForHumanities
 讓人文與社會學群的學生可藉由此課程了解基本程式編程原理，
 且運用在學術研究或實際生活當中。
 
+## 課程安排
+
+第一、二節為授課時間，第三節課為 Lab Session，同學將透過直接操作強化課程內容的吸收。
+
 ## 課程進度
 
 | 週數   |  日期    |課程內容                                      |
