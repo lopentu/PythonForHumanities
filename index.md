@@ -24,7 +24,7 @@ repository_url: https://github.com/lopentu/PythonForHumanities
 
 | 週數   |  日期    |課程內容                                      |
 |--------|----------|----------------------------------------------|
-|   1    |  09/12   |課程概述                                      |
+|   1    |  09/12   |[課程概述][w1]                                |
 |   2    |  09/19   |[環境建置、編輯器安裝與版本控制介紹][w2]      |
 |   3    |  09/26   |[程式編寫與執行基本概念][w3]                  |
 |   4    |  10/03   |[語法結構與基本資料型態（I）][w4]             |
@@ -42,6 +42,7 @@ repository_url: https://github.com/lopentu/PythonForHumanities
 |   16   |  12/26   |期末報告                                      |
 |   17   |  01/02   |期末報告繳交                                  | 
 
+[w1]: http://lopen.linguistics.ntu.edu.tw/orientation/orientation.html 
 [w2]: {% post_url PythonForHumanities/2018-08-17-環境建置、編輯器安裝與版本控制介紹 %}
 [w3]: {% post_url PythonForHumanities/2018-09-26-程式編寫與執行基本概念 %}
 [w4]: {% post_url PythonForHumanities/2018-10-03-語法結構與基本資料型態（I） %}
