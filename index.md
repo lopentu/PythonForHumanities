@@ -18,6 +18,8 @@ repository_url: https://github.com/lopentu/PythonForHumanities
 
 第一、二節為授課時間，第三節課為 Lab Session，同學將透過直接操作強化課程內容的吸收。
 
+[Lab Session 網頁](lab)
+
 ## 課程進度
 
 | 週數   |  日期    |課程內容                                      |
