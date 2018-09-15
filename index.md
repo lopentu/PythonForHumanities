@@ -43,7 +43,7 @@ repository_url: https://github.com/lopentu/PythonForHumanities
 |   17   |  01/02   |期末報告繳交                                  | 
 
 [w1]: http://lopen.linguistics.ntu.edu.tw/orientation/orientation.html 
-[w2]: {% post_url PythonForHumanities/2018-08-17-環境建置、編輯器安裝與版本控制介紹 %}
+[w2]: {% post_url PythonForHumanities/2018-09-19-環境建置、編輯器安裝與版本控制介紹 %}
 [w3]: {% post_url PythonForHumanities/2018-09-26-程式編寫與執行基本概念 %}
 [w4]: {% post_url PythonForHumanities/2018-10-03-語法結構與基本資料型態（I） %}
 [w6]: {% post_url PythonForHumanities/2018-10-17-語法結構與基本資料型態（II） %}
