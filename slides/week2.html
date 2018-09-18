@@ -56,19 +56,25 @@ permalink: PythonForHumanities/slides/week2
             <textarea data-template>
               ### 下載官方 Python 
               官網： [https://www.python.org](https://www.python.org)
-              ![official site](./assets/img/week2/p1.png)
+              ![official site](./assets/img/week2/p1-1.png)
+            </textarea>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              ### 準備安裝 
+              ![official site](./assets/img/week2/p1-2.png)
             </textarea>
           </section>
           <section data-markdown>
             <textarea data-template>
               ### 安裝畫面
-              ![installing](./assets/img/week2/p2.png)
+              ![installing](./assets/img/week2/p1-3.png)
             </textarea>
           </section>
           <section data-markdown>
             <textarea data-template>
               ### 成功畫面
-              ![success](./assets/img/week2/p3.png)
+              ![success](./assets/img/week2/p1-4.png)
             </textarea>
           </section>
         </section>
@@ -129,13 +135,7 @@ permalink: PythonForHumanities/slides/week2
             <textarea data-template>
               ### 然後就安裝成功了
 
-              跟 Windows 不太一樣的點是，  
-              這裡沒有什麼要勾選的，  
-
-              系統變數也不用特別去設定，  
-              裝完就可以直接在終端機運行了。  
-
-              （這邊聽不懂也沒有關係，暫時沒有那麼重要...）
+              ![](./assets/img/week2/p13-7.png)
             </textarea>
           </section>
         </section>
@@ -213,8 +213,8 @@ permalink: PythonForHumanities/slides/week2
               ### 確認是否正確安裝
               查看 Python 與 pip 版本
               ```bash
-              python --version
-              pip --version
+              python3 --version
+              pip3 --version
               ```
               ![check version](./assets/img/week2/p14-2.png)
             </textarea>
@@ -223,7 +223,7 @@ permalink: PythonForHumanities/slides/week2
             <textarea data-template>
               ### 安裝 IPython   
               ```bash
-              pip install ipython
+              pip3 install ipython
               ```
               ![install ipython](./assets/img/week2/p14-3.png)
             </textarea>
@@ -434,8 +434,8 @@ permalink: PythonForHumanities/slides/week2
         </section>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.min.js"></script>
     <script src="https://cdn.rawgit.com/chuckfairy/VanillaQR.js/96c2ccc4/VanillaQR.min.js"></script>
     <script type="text/javascript">
     (function(){
@@ -462,12 +462,12 @@ permalink: PythonForHumanities/slides/week2
         history: true,
         slideNumber: true,
         dependencies: [
-          {src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          {src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          {src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.min.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          {src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          {src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.min.js', async: true },
-          { src: 'https://cdn.rawgit.com/denehyg/reveal.js-menu/master/menu.js'},
+          {src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          {src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          {src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/markdown/markdown.min.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          {src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          {src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/zoom-js/zoom.min.js', async: true },
+          {src: 'https://cdn.rawgit.com/denehyg/reveal.js-menu/master/menu.js', async: true},
         ]
       });
     </script>
