@@ -1,4 +1,5 @@
 ---
+layout: default_pfh
 permalink: /PythonForHumanities/lab/
 ---
 
