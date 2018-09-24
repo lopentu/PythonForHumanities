@@ -4,13 +4,41 @@ permalink: PythonForHumanities/slides/week3
 title: 程式編寫與執行基本概念 
 ---
 
-<section data-background="https://media.giphy.com/media/11ahZZugJHrdLO/giphy.gif" data-markdown>
+<section>
+  <section data-background-transition="zoom" data-background="#b5533c" data-markdown>
+    <textarea data-template>
+      ### 首先，關於上個禮拜...
+      ![](./assets/img/week3/p1-1.png)
+    </textarea> 
+  </section>
+  <section data-background="https://media.giphy.com/media/uHox9Jm5TyTPa/giphy.gif" data-markdown>
+    <textarea data-template>
+      <h3 style="color:#000">為什麼我print不出中文...</h3>
+    </textarea>
+  </section>
+  <section data-background="https://media.giphy.com/media/Yjvg6BHVXJVOxwrG43/giphy.gif" data-markdown>
+    <textarea data-template>
+      ### 跟阿吉講的都不一樣RRR
+    </textarea>
+  </section>
 </section>
 
 <section>
   <section data-markdown>
     <textarea data-template>
       ## 虛擬環境
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### 目的
+      再次確保大家都在同一個開發環境上
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### 那是什麼？能吃嗎？
+      虛擬出來的環境可以不受其他 Python 版本干擾
     </textarea>
   </section>
   <section data-markdown>
@@ -42,3 +70,213 @@ title: 程式編寫與執行基本概念
     </textarea>
   </section>
 </section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      ## 程式執行原理
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### 程式的執行是一連串的動作
+      ![](./assets/img/week3/p3-1.png)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <script type="text/template">
+      ### `.py` 轉成 `.pyc`
+       
+      `.py` 會先被轉譯成*位元組碼* (bytecode)，就是 `.pyc`
+    </script>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### `pyc` 轉成 *bytecode*
+
+      透過 Python Virtual Machine (PVM), `.pyc` 會被轉譯成 *機器碼* (machine code)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### 結論
+
+      先前安裝的 Python 已經幫我們處理好這一連串的動作， 雖然我們不會碰觸到這些底層的部分，但是了解程式基本執行概念可以對寫程式有更完整的了解
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      ## 程式執行方法
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### 互動式視窗 (REPL)
+      REPL (互動式視窗) 的全名為 Read-Eval-Print Loop
+      
+      也就是我們常提到的<span class="fragment highlight-red">python shell</span>
+
+      它的目的主要是用來測試而不是用來編寫程式
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### 啟動方式
+
+      請在 VSCode 中操作
+      <ol class="font-size: 10px;">
+        <li class="fragment">
+          <i class="fab fa-windows"></i> <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd></span> 或 <i class="fab fa-apple"></i> <kbd>CMD</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd>
+        </li>
+        <li class="fragment">
+          輸入 <span class="fragment highlight-red">`python 建立終端機`</span> 或 <span class="fragment highlight-red">`python create terminal`</span>
+        </li>
+        <li class="fragment">
+          在下方 **TERMINAL** 輸入 `python`
+        </li>
+      </ol>
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### 實際操作
+
+      ```bash
+      >>> print('這就是我要的Python~')
+      這就是我要的Python~
+      >>> 1 + 1
+      2
+      >>> import __hello__
+      Hello, world!
+      ```
+      要離開請輸入 `exit()` 或 <kbd>CTRL</kbd> + <kbd>D</kbd>
+
+      ```bash
+      >>> exit()
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### IPython
+      `ipython` 其實就是一個 <span class="fragment highlight-red">python shell</span>
+      
+      但比原生的 shell 更加強大，例如支援<span class="fragment highlight-red">多行輸入</span><span class="fragment highlight-red">自動空格</span>等功能
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      ## 基本概念
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Expression (運算式)
+
+      ```python
+      1 + 1
+      range(100)
+      'this is a string'
+      [i for i in 'abcde']
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Statement (陳述)
+
+      ```python
+      name = '阿吉'
+      if False:
+          raise Exception
+      print('我都念Costco')
+      def greeting():
+          return 'Hello, Kitty'
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Script (腳本)
+
+      `hello.py`
+
+      ```python
+      def greeting():
+          print("Hello, 世界")
+
+      if __name__ == '__main__':
+          greeting()
+      ```
+      
+      在終端機直接執行：
+
+      ```bash
+      $ python hello.py
+      ```
+
+      在 IPython 中直接執行
+
+      ```bash
+      In [1]: run hello.py
+      Hello, 世界
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Module (模組)
+
+      `hello.py`
+
+      ```python
+      def greeting():
+          print("Hello, 世界")
+
+      if __name__ == '__main__':
+          greeting()
+      ```
+
+      `main.py`
+      ```python
+      from hello import greeting
+
+      greeting()
+      ```
+
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Library (函式庫)
+
+      ```no-highlight
+      .
+      └── PythonForHumanities
+          ├── hello.py 
+          └── main.py 
+      ```
+
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Package (套件)
+
+      一個包含 `__init__.py` 命名空間(資料夾)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Framework (框架)
+      由多個 module 和/或 package 組合而成的集合
+    </textarea>
+  </section>
+</section>
+
