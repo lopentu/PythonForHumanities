@@ -201,6 +201,14 @@ title: 程式編寫與執行基本概念
       ```
     </textarea>
   </section>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
+    <textarea data-template>
+      ### Expression vs Statement
+      - Expression 屬於 Statement 的一部分
+      - Expression: <span class="fragment highlight-blue">是</span>什麼 
+      - Statement: <span class="fragment highlight-blue">做</span>什麼
+    </textarea>
+  </section>
   <section data-markdown>
     <textarea data-template>
       ### Script (腳本)
@@ -252,9 +260,19 @@ title: 程式編寫與執行基本概念
 
     </textarea>
   </section>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
+    <textarea data-template>
+      ### Script vs Module
+      - Script 與 Module 本質上並無區別
+      - Script: 被用來直接執行
+      - Module: 被用來 `import` 
+    </textarea>
+  </section>
   <section data-markdown>
     <textarea data-template>
       ### Library (函式庫)
+
+      Library 為 modules/packages 的集合
 
       ```no-highlight
       .
@@ -262,7 +280,6 @@ title: 程式編寫與執行基本概念
           ├── hello.py 
           └── main.py 
       ```
-
     </textarea>
   </section>
   <section data-markdown>
@@ -270,12 +287,61 @@ title: 程式編寫與執行基本概念
       ### Package (套件)
 
       一個包含 `__init__.py` 命名空間(資料夾)
+
+      ```no-highlight
+      PythonForHumaniteis 
+      └── mypackage
+          ├── __init__.py 
+          └── hello.py 
+      ```
+
+      `mypackage` 就是一個 **package**
+
+      ```python
+      from mypackage.hello import greeting
+      greeting()
+      ```  
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
+    <textarea data-template>
+      ### Library vs Package
+      
+      - 本質上並無區別
+      - Package 含有 `__init__.py` 的命名空間（資料夾）
+      - Library 為比較抽象的概念，為 modules/packages 的集合
     </textarea>
   </section>
   <section data-markdown>
     <textarea data-template>
       ### Framework (框架)
       由多個 module 和/或 package 組合而成的集合
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
+    <textarea data-template>
+      ### Module vs Library vs Framework
+      以身體器官作為譬喻
+
+      - Module: <i class="fas fa-hand-point-up"></i> 手指
+      - Library: <i class="fas fa-hand-paper"></i> 手掌
+      - Framework: <i class="fas fa-male"></i> 身體
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### 各種比較 
+      以下收錄一些在 <i class="fab fa-stack-overflow"></i> Stackoverflow 上不錯的討論
+      - [Expression vs Statement][expression vs statement]
+      - [Module vs Library][module vs library]
+      - [Module vs Package][module vs package]
+      - [Module vs Library vs Framework][module vs library vs framework]
+
+      [expression vs statement]: https://stackoverflow.com/q/4728073/1105489
+      [module vs library]: https://stackoverflow.com/q/19198166/1105489
+      [module vs package]: https://stackoverflow.com/q/7948494/1105489
+      [module vs library vs framework]: https://stackoverflow.com/q/4099975/1105489
+      
     </textarea>
   </section>
 </section>
