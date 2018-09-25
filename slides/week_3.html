@@ -21,8 +21,51 @@ title: 程式編寫與執行基本概念
       ### 跟阿吉講的都不一樣RRR
     </textarea>
   </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### 解決方法: Step 1
+
+      ![](./assets/img/week3/p5-1.png)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### 解決方法: Step 2
+
+      ![](./assets/img/week3/p5-2.png)
+    </textarea>
+  </section>
+  <section id="mac-tweak" data-background-transition="zoom" data-background="#0abab5" data-markdown>
+    <textarea data-template>
+      ### <i class="fab fa-apple"></i> Mac 的捧油
+
+      0. 輸入 <kbd>CTRL</kbd> + <kbd>`</kbd> 打開 TERMINAL
+      0. 把以下這段貼上並按下 <kbd>ENTER</kbd>
+
+      ```bash
+      echo "alias python=python3" >> ~/.bash_profile && exit 
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### 執行 Code Runner  
+
+      <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>N</kbd>
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### 更好的選擇
+
+      VSCode 其實可以直接執行 Python 腳本
+
+      ![](./assets/img/week3/p4-1.png)
+    </textarea>
+  </section>
 </section>
 
+{% comment %}
 <section>
   <section data-markdown>
     <textarea data-template>
@@ -70,6 +113,7 @@ title: 程式編寫與執行基本概念
     </textarea>
   </section>
 </section>
+{% endcomment %}
 
 <section>
   <section data-markdown>
@@ -126,7 +170,12 @@ title: 程式編寫與執行基本概念
     <textarea data-template>
       ### 啟動方式
 
-      請在 VSCode 中操作
+      （請在 VSCode 中操作）
+
+      輸入 <kbd>CTRL</kbd> + <kbd>`</kbd> 打開 TERMINAL
+
+      (<i class="fab fa-apple"></i> Mac 使用者請確認有做了[這件事](#mac-tweak))
+      {% comment %}
       <ol class="font-size: 10px;">
         <li class="fragment">
           <i class="fab fa-windows"></i> <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd></span> 或 <i class="fab fa-apple"></i> <kbd>CMD</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd>
@@ -138,6 +187,7 @@ title: 程式編寫與執行基本概念
           在下方 **TERMINAL** 輸入 `python`
         </li>
       </ol>
+      {% endcomment %}
     </textarea>
   </section>
   <section data-markdown>
@@ -205,8 +255,8 @@ title: 程式編寫與執行基本概念
     <textarea data-template>
       ### Expression vs Statement
       - Expression 屬於 Statement 的一部分
-      - Expression: <span class="fragment highlight-blue">是</span>什麼 
-      - Statement: <span class="fragment highlight-blue">做</span>什麼
+      - Expression: <span class="fragment highlight-red">是</span>什麼 
+      - Statement: <span class="fragment highlight-red">做</span>什麼
     </textarea>
   </section>
   <section data-markdown>
@@ -289,7 +339,7 @@ title: 程式編寫與執行基本概念
       一個包含 `__init__.py` 命名空間(資料夾)
 
       ```no-highlight
-      PythonForHumaniteis 
+      PythonForHumanities 
       └── mypackage
           ├── __init__.py 
           └── hello.py 
