@@ -31,7 +31,7 @@ Lab Session
 | 18.  | 01/09|  繳交期末報告                           |
 
 [w2]:https://docs.google.com/presentation/d/1nvdXhE-HQqtjLFTL6zL1gcnQ-DVpHUETdTT00M28HI8/edit?usp=sharing
-
+[w3]:https://docs.google.com/presentation/d/1tC5rDWTjwftrwuXJux0ydRgz2eICsUnlRWPdBcZRgSU/edit?usp=sharing
 
 Python 作為人文學群的程式語言
 -------------------------
