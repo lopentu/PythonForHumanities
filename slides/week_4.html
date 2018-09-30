@@ -8,7 +8,14 @@ title: 語法結構與基本資料型態（I）
   <section data-background-transition="zoom" data-background="#b5533c" data-markdown>
     <textarea data-template>
       ### FAQ
-      1. 阿吉的簡報是用什麼軟體做的？
+      阿吉的簡報是用什麼軟體做的？
+    </textarea>
+  </section>
+  <section data-background="https://media.giphy.com/media/eeDarGFPiZxyE/giphy.gif" data-markdown>
+    <textarea data-template>
+      終於有人問我了～ 
+
+      [reveal.js](https://revealjs.com/) <!-- .element class="fragment" -->
     </textarea>
   </section>
 </section>
@@ -50,6 +57,18 @@ title: 語法結構與基本資料型態（I）
       >>> 3.14159
       >>> type(math.pi)
       <class 'float'>
+      ```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
+    <textarea data-template>
+      #### 補充： `complex` (複數)
+
+      ```python
+      >>> type(1j)
+      <class 'complex'>
+      >>> type((1+0j))
+      <class 'complex'>
       ```
     </textarea>
   </section>
@@ -172,27 +191,42 @@ text = (
 
     </textarea>
   </section>
-  <section data-markdown>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
     <textarea data-template>
-      #### 特殊前綴
-      1. `b''`: byte string 
-      2. `r''`: raw string
-      3. `f''`: formatted string
+      #### 補充： 特殊前綴
+
+      `u''`: unicode string
+      ```python
+      >>> u'中文'
+      '中文'
+      ```
+
+      `b''`: byte string 
+      ```python
+      >>> '中文'.encode('utf-8')
+      b'\xe4\xb8\xad\xe6\x96\x87'
+      >>> b'abc123'
+      b'abc123'
+      ```
     </textarea>
   </section>
-  <section data-markdown>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
     <textarea data-template>
-
-    </textarea>
-  </section>
-  <section data-markdown>
-    <textarea data-template>
-
-    </textarea>
-  </section>
-  <section data-markdown>
-    <textarea data-template>
-
+      `r''`: raw string
+      ```python
+      >>> 'C:\Users\nicky\ntitled\text.txt' 
+      SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+      >>> r'C:\Users\nicky\ntitled\text.txt'
+      'C:\\Users\\nicky\\ntitled\\text.txt'
+      ```
+      `f''`: formatted string (*f-string*)
+      ```python
+      >>> target = '你爸'
+      >>> f'{target}在你後面，他非常火'
+      '你爸在你後面，他非常火'
+      >>> f'{somebody}在你後面，他非常火'
+      NameError: name 'somebody' is not defined
+      ```
     </textarea>
   </section>
 </section>
@@ -272,6 +306,27 @@ text = (
     <textarea data-template>
       與 `list` 相似，唯 `tuple` 之元素不可修改
 
+      ```python
+      # list
+      >>> x = ['豬', '隊', '友']
+      >>> x[0] = '狗'
+      >>> x
+      ['狗', '隊', '友']
+      >>> del x[0] 
+      >>> x
+      ['隊', '友']
+
+      # set
+      >>> y = ['豬', '隊', '友']
+      >>> y[0] = '狗'
+      TypeError: 'tuple' object does not support item assignment
+      >>> del y[0] 
+      TypeError: 'tuple' object doesn't support item deletion
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
       注意不要與其他資料型別搞混了：
       ```
       >>> a = ('a', 'b')
@@ -302,7 +357,28 @@ text = (
   </section>
   <section data-markdown>
     <textarea data-template>
-`dict` 為 *鍵*-*值* (key-value)一組的資料型態，只要是可以被hash的物件都可以做為 `dict` 的 key，例：
+      #### 建立方式
+      ```python
+      # 方法一
+      x = dict(name='Aji', is_graduated=True, age=23)
+
+      # 方法二
+      x = {'name': 'Aji', 'is_graduated': True, 'age': 23}
+
+      # 方法三
+      x = dict([['name', 'Aji'], ['is_graduated', True], ['age', 23]])
+
+      # 方法四
+      x = {}
+      x['name'] = 'Aji'
+      x['is_graduated'] = True
+      x['age'] = 23
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+`dict` 為 *鍵*-*值* (key-value)一組的資料型態，且可為**巢狀結構**
 
 ```python
 profile = {
@@ -324,10 +400,15 @@ profile = {
   </section>
   <section data-markdown>
     <textarea data-template>
+只要是可以被hash的物件都可以做為 `dict` 的 key，
 像是 `list` 或 `set` 此類不可被 hash 的物件就不可以當作 key
 
 ```python
 >>> d = {['a', 'b']: 'foo'}
+TypeError: unhashable type: 'list'
+
+# 原因是因為：
+>>> hash(['a', 'b'])
 TypeError: unhashable type: 'list'
 ```
     </textarea>
@@ -344,21 +425,21 @@ TypeError: unhashable type: 'list'
     <textarea data-template>
       #### `set`
       
-      `set` 的表示方式為 `{}`，跟 `dict` 有點像，不過 `dict` 一定是 key-value 為一組，注意不要眼花了。
-      
-      這是 `set`
+      `set` 的表示方式為 `{}`，跟 `dict` 有點像，    
+      不過 `dict` 一定是 key-value 為一組。  
+ 
       ```python
+      # 這是 set
       >>> a = {'a', 'b', 'c'}
       >>> type(a)
       <class 'set'>
-      ```
-      
-      這是 `dict`
-      ```python
+
+      # 這是 dict
       >>> a = {'a': 0, 'b': 1, 'c': 2}
       >>> type(a)
       <class 'dict'>
       ```
+      <i class="fas fa-exclamation-triangle"></i> 注意不要眼花
     </textarea>
   </section>
   <section data-markdown>
@@ -412,6 +493,8 @@ TypeError: unhashable type: 'list'
       `None` 就是空值，它的 `type` 為 `NoneType`
 
       ```python
+      >>> None
+
       >>> type(None)
       NoneType
       ```
