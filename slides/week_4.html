@@ -11,6 +11,7 @@ title: 語法結構與基本資料型態（I）
       阿吉的簡報是用什麼軟體做的？
     </textarea>
   </section>
+  {% comment %}
   <section data-background="https://media.giphy.com/media/eeDarGFPiZxyE/giphy.gif" data-markdown>
     <textarea data-template>
       終於有人問我了～ 
@@ -18,6 +19,7 @@ title: 語法結構與基本資料型態（I）
       [reveal.js](https://revealjs.com/) <!-- .element class="fragment" -->
     </textarea>
   </section>
+  {% endcomment %}
 </section>
 
 <section>
@@ -229,6 +231,11 @@ text = (
       ```
     </textarea>
   </section>
+  {% comment %}
+  <section data-background="https://media.giphy.com/media/T8Dhl1KPyzRqU/giphy.gif" data-markdown>
+    你們還在嗎？
+  </section>
+  {% endcomment %}
 </section>
 
 <section>
@@ -247,14 +254,14 @@ text = (
       #### Mutable (可變性)
 
       ```python
-      >>> a = ['a', 'b', 'c', 'd', 'e''']
+      >>> a = ['a', 'b', 'c', 'd', 'e']
       >>> a[2]
       'b'
       >>> a[2] = 'x'
       >>> a[2]
       'x'
       >>> a
-      ['a', 'x', 'c', 'd', 'e''']
+      ['a', 'x', 'c', 'd', 'e']
       ```
     </textarea>
   </section>
@@ -294,6 +301,11 @@ text = (
       ```
     </textarea>
   </section>
+  {% comment %}
+  <section data-background="https://media.giphy.com/media/xTiTnJ3BooiDs8dL7W/giphy.gif" data-markdown>
+    你在公🦐小
+  </section>
+  {% endcomment %}
 </section>
 
 <section>
@@ -451,7 +463,7 @@ TypeError: unhashable type: 'list'
       ```python
       >>> hash(set(('a', 'b', 'c')))
       TypeError: unhashable type: 'set'
-      >>> hash(set(('a', 'b', 'c')))
+      >>> hash(frozenset(('a', 'b', 'c')))
       -7811812079328027595
       ```
       
