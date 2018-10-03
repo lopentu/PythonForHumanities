@@ -46,12 +46,14 @@ title: 語法結構與基本資料型態（I）
       #### `float` (浮點數)
 
       ```python
-      >>> x = 1.1 + 2.2
+      >>> x = 4.0 + .87 
       >>> x
-      >>> 3.3
+      >>> 4.87 
       >>> type(x)
       <class 'float'>
       ```
+
+      <i class="fas fa-exclamation-triangle"></i> `.87 == 0.87`; 整數部分若為`0`則可省略
 
       ```python
       >>> import math
@@ -72,6 +74,13 @@ title: 語法結構與基本資料型態（I）
       >>> type((1+0j))
       <class 'complex'>
       ```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+      #### 練習
+      1. `int` 與 `float` 相加會變成什麼資料型態？
+      1. `1.1 + 2.2` 等於多少？
     </textarea>
   </section>
 </section>
@@ -231,6 +240,28 @@ text = (
       ```
     </textarea>
   </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+      #### 練習
+      1. 設定一個變數，在螢幕上輸出：
+          ```bash
+          你才xx,你全家都xx
+          ```
+      2. 請問以下兩者`x` 與 `y` 是否相同？
+
+          ```python
+          x = '''\
+          a\
+          b\
+          '''
+          
+          y = '''
+          a
+          b
+          ''' 
+          ``` 
+    </textarea>
+  </section>
   {% comment %}
   <section data-background="https://media.giphy.com/media/T8Dhl1KPyzRqU/giphy.gif" data-markdown>
     你們還在嗎？
@@ -301,6 +332,18 @@ text = (
       ```
     </textarea>
   </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+      #### 練習
+      1. 建立一個包含 <u>`3` 個 長度為 `0` 的 `list`</u> 的 `list`
+      2. 請合併以下兩個 `list`
+          ```python
+          a = ['只', '要', '有', '心']
+          b = ['人', '人', '都', '可', '以', '是', 'Py', '神']
+          ```
+    </textarea>
+  </section>
+
   {% comment %}
   <section data-background="https://media.giphy.com/media/xTiTnJ3BooiDs8dL7W/giphy.gif" data-markdown>
     你在公🦐小
@@ -328,8 +371,8 @@ text = (
       >>> x
       ['隊', '友']
 
-      # set
-      >>> y = ['豬', '隊', '友']
+      # tuples
+      >>> y = ('豬', '隊', '友')
       >>> y[0] = '狗'
       TypeError: 'tuple' object does not support item assignment
       >>> del y[0] 
@@ -339,24 +382,50 @@ text = (
   </section>
   <section data-markdown>
     <textarea data-template>
-      注意不要與其他資料型別搞混了：
+      `tuple` 佔用的記憶體空間較小
+
+      ```python
+      # list
+      >>> x = ['豬', '隊', '友']
+      >>> x.__sizeof__()
+      64
+      # tuples
+      >>> y = ('豬', '隊', '友')
+      >>> y.__sizeof__()
+      48
       ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      注意不要與其他資料型別搞混了：
+      ```python
       >>> a = ('a', 'b')
       >>> type(a)
       <class 'tuple'>
       ```
 
-      ```
+      ```python
       >>> a = ('a')
       >>> type(a)
       <class 'str'>
       ```
 
-      ```
+      ```python
       >>> a = ('a', )
       >>> type(a)
       <class 'tuple'>
       ```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+      #### 練習
+      1. 建立一長度為 `1` 的 `tuple` (元素不設限)
+      2. 把下列 `list` 轉換成 `tuple`
+          ```python
+          [5, 4, 8, 7]
+          ``` 
     </textarea>
   </section>
 </section>
@@ -365,27 +434,6 @@ text = (
   <section data-markdown>
     <textarea data-template>
       ### Dictionaries (字典)
-    </textarea>
-  </section>
-  <section data-markdown>
-    <textarea data-template>
-      #### 建立方式
-      ```python
-      # 方法一
-      x = dict(name='Aji', is_graduated=True, age=23)
-
-      # 方法二
-      x = {'name': 'Aji', 'is_graduated': True, 'age': 23}
-
-      # 方法三
-      x = dict([['name', 'Aji'], ['is_graduated', True], ['age', 23]])
-
-      # 方法四
-      x = {}
-      x['name'] = 'Aji'
-      x['is_graduated'] = True
-      x['age'] = 23
-      ```
     </textarea>
   </section>
   <section data-markdown>
@@ -412,17 +460,54 @@ profile = {
   </section>
   <section data-markdown>
     <textarea data-template>
-只要是可以被hash的物件都可以做為 `dict` 的 key，
-像是 `list` 或 `set` 此類不可被 hash 的物件就不可以當作 key
+      #### 建立方式
+      ```python
+      # 方法一
+      x = dict(name='Aji', is_graduated=True, age=23)
 
-```python
->>> d = {['a', 'b']: 'foo'}
-TypeError: unhashable type: 'list'
+      # 方法二
+      x = {'name': 'Aji', 'is_graduated': True, 'age': 23}
 
-# 原因是因為：
->>> hash(['a', 'b'])
-TypeError: unhashable type: 'list'
-```
+      # 方法三
+      x = dict([['name', 'Aji'], ['is_graduated', True], ['age', 23]])
+
+      # 方法四
+      x = {}
+      x['name'] = 'Aji'
+      x['is_graduated'] = True
+      x['age'] = 23
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      只要是可以被hash的物件都可以做為 `dict` 的 key，
+      像是 `list` 或 `set` 此類不可被 hash 的物件就不可以當作 key
+
+      ```python
+      >>> d = {['a', 'b']: 'foo'}
+      TypeError: unhashable type: 'list'
+
+      # 原因是因為：
+      >>> hash(['a', 'b'])
+      TypeError: unhashable type: 'list'
+      ```
+
+      <i class="fas fa-exclamation-triangle"></i> 可被 hash ([雜湊](https://zh.wikipedia.org/zh-tw/散列)) 的資料型別都具有__不可變__的特性
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template data-separator="^---$">
+      #### 練習
+      1. 用 `dict` 建立你的個人檔案（例如：姓名、性別、年齡等）
+      1. 將以下列表格轉換成 `dict`
+
+| KEY | VALUE |
+|-----------------|-----------|
+| 孫生 瑋哥 酷炫 | 反骨男孩 |
+| Andy 家寧| 眾量級 |
+| 阿滴 滴妹| 阿滴英文 |
+      
     </textarea>
   </section>
 </section>
@@ -458,7 +543,7 @@ TypeError: unhashable type: 'list'
     <textarea data-template>
       #### `frozenset`
       
-      **Hashable**
+      **Hashable** (可雜湊性)
       
       ```python
       >>> hash(set(('a', 'b', 'c')))
@@ -467,7 +552,7 @@ TypeError: unhashable type: 'list'
       -7811812079328027595
       ```
       
-      **Immutable**
+      **Immutable** (不可變性)
       
       `frozenset` 中之元素為不可變動的。
     </textarea>
