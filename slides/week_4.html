@@ -288,7 +288,7 @@ text = (
       >>> a[2]
       'x'
       >>> a
-      ['a', 'x', 'c', 'd', 'e']
+      ['a', 'b', 'x', 'd', 'e']
       ```
     </textarea>
   </section>
@@ -438,7 +438,7 @@ text = (
 profile = {
     'institute': 'Graduate Institute of Linguistics',
     'classrooms': [304, 305],
-    'faculties': {
+    'faculties': [
         {
             'name': 'shukai',
             'gender': 'male',
@@ -447,7 +447,7 @@ profile = {
             'name': 'limay',
             'gender': 'female',
         }
-    }
+    ]
 }
 ```
     </textarea>
@@ -457,10 +457,10 @@ profile = {
       #### 建立方式
       ```python
       # 方法一
-      x = dict(name='Aji', is_graduated=True, age=23)
+      x = {'name': 'Aji', 'is_graduated': True, 'age': 23}
 
       # 方法二
-      x = {'name': 'Aji', 'is_graduated': True, 'age': 23}
+      x = dict(name='Aji', is_graduated=True, age=23)
 
       # 方法三
       x = dict([['name', 'Aji'], ['is_graduated', True], ['age', 23]])
