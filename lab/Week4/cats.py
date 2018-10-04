@@ -145,7 +145,7 @@ if x_scene1 == "1":
 
         print("{:^80}".format("Ending"))
         print("{:^80}".format("--------"))
-        print("Macavity wins. It's not how Cats suppose to end though.")
+        print("Macavity wins. It's not how Cats is supposed to end though.")
         exit()
     else:
         print("Unknown story line. Please consult Author.")
