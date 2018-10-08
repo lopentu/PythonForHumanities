@@ -16,12 +16,6 @@ title: 資料型態應用與流程控制
       ### [ji.py][ji.py-link]
       [吉.py][ji.py-link] 是一個幫助學習Python的小工具
       [ji.py-link]: https://github.com/amigamel/ji.py
-
-      ```bash
-      pip install -U ji.py
-      ``` 
-
-      (<i class="fab fa-apple"></i> Mac 使用者請確認有做了[這件事](#mac-tweak))
     </textarea>
   </section>
   <section id="mac-tweak" data-background-transition="zoom" data-background="#0abab5" data-markdown>
@@ -36,13 +30,168 @@ title: 資料型態應用與流程控制
       ```
     </textarea>
   </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### 開始使用[吉.py](https://github.com/amigcamel/ji.py) 
 
+      安裝/更新
+      ```bash
+      $ pip install -U ji.py
+      ```
+
+      執行
+      ```bash
+      $ ji.py
+      ```
+
+    </textarea>
+  </section>
 </section>
 
 <section>
   <section data-markdown>
     <textarea data-template>
+      ## 資料型別應用
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#b5533c" data-markdown>
+    <textarea data-template>
+      ### <i class="fas fa-exclamation-circle"></i> 請務必閱讀 
+      [Built-in Types](https://docs.python.org/3/library/stdtypes.html)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Numbers 
+      0. (  ( ( 6 + 22 ) ÷ 4 ) - 3 )<sup><small>2</small></sup>
+          ```python
+          (((6 + 22) / 4) - 3) ** 2
+          ```
+      0. 圓周率四捨五入至小數點第五位 
+          ```python
+          import math
+          round(math.pi, 5)
+          ```
+      0. 將 1 到 10 做加總
+          ```python
+          sum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+          ```
+      0. -9527 的絕對值
+          ```python
+          abs(-9527)
+          ```
+    </textarea>
+  </section>
+  <section data-background="#2C3539" data-markdown>
+    <textarea data-template>
+      ### Strings
+      ```python
+      # 範例1: 
+      sent = '   紅鯉魚家有頭小綠驢叫李屢屢，綠鯉魚家有頭小紅驢叫呂里里，紅鯉魚說他家的李屢屢要比綠鯉魚家的呂里里綠，綠鯉魚說他家的呂里里要比紅鯉魚家的李屢屢紅，不只是紅鯉魚比綠鯉魚的驢綠，還是綠鯉魚比紅鯉魚的驢紅    '
+      ```
+      0. 去除字首字尾多餘空白 
+      ```python
+      sent = sent.strip()
+      ```
+      0. 計算句子長度
+      ```python
+      len(sent)
+      ```
+      0. `藍鯉魚` 是否有出現在句子內？ 
+      ```python
+      '藍鯉魚' in sent
+      ```
+      0. 將 句子以 `，` 分隔成一個 `list`  
+      ```python
+      sent = sent.split('，')
+      ```
+    </textarea>
+  </section>
+  <section data-background="#2C3539" data-markdown>
+    <textarea data-template>
+      ```python
+      # 範例2: 
+      sent = '我好開心R'
+      ```
+      0. 把 `開心` 取代為 `咖勳`
+      ```python
+      sent = sent.replace('開心, '咖勳')
+      ```
+      0. 把字尾重複 30 次
+      ```python
+      sent = sent[:-1] + sent[-1] * 30 
+      ```
+      0. 把英文字母轉成小寫
+      ```python
+      sent = sent.lower()
+      ```
+      0. 計算出現幾個 `r`
+      ```python
+      sent.count('r')
+      ```
+    </textarea>
+  </section>
+  <section data-background="#2C3539" data-markdown>
+    <textarea data-template>
+      ```python
+      # 範例3:
+      sents = ['graduate institute of linguistics', 'national taiwan university'] 
+      ```
+      0. 用 ` at ` 將 `sents` 合併為字串 
+      ```python
+      sent = ' at '.join(sents)
+      ```
+      0. 將第一個字轉成大寫
+      ```python
+      sent = sent.capitalize()
+      ```
+      0. 將每一個字的首字轉為大寫 
+      ```python
+      sent = sent.title()
+      ```
+      0. 檢查字串是否為 `ty` 結尾 
+      ```python
+      sent.endswith('ty')
+      ```
 
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Lists 
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Tuples
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Dictionaries 
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Sets
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Booleans
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### None
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      ## 流程控制 
     </textarea>
   </section>
 </section>
