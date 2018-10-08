@@ -1,0 +1,614 @@
+---
+layout: slide_pfh
+permalink: PythonForHumanities/slides/week4
+title: 資料型態介紹
+---
+
+<section>
+  <section data-background-transition="zoom" data-background="#b5533c" data-markdown>
+    <textarea data-template>
+      ### FAQ
+      阿吉的簡報是用什麼軟體做的？
+    </textarea>
+  </section>
+  <section data-background="https://media.giphy.com/media/eeDarGFPiZxyE/giphy.gif" data-markdown>
+    <textarea data-template>
+      終於有人問我了～ 
+
+      [reveal.js](https://revealjs.com/) <!-- .element class="fragment" -->
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Numbers (數字)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      #### `int` (整數) 
+
+      ```python
+      >>> x = 1 + 2
+      >>> x
+      3
+      >>> type(x)
+      <class 'int'>
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      #### `float` (浮點數)
+
+      ```python
+      >>> x = 4.0 + .87 
+      >>> x
+      >>> 4.87 
+      >>> type(x)
+      <class 'float'>
+      ```
+
+      <i class="fas fa-exclamation-triangle"></i> `.87 == 0.87`; 整數部分若為`0`則可省略
+
+      ```python
+      >>> import math
+      >>> math.pi
+      >>> 3.14159
+      >>> type(math.pi)
+      <class 'float'>
+      ```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
+    <textarea data-template>
+      #### 補充： `complex` (複數)
+
+      ```python
+      >>> type(1j)
+      <class 'complex'>
+      >>> type((1+0j))
+      <class 'complex'>
+      ```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+      #### 練習
+      1. `int` 與 `float` 相加會變成什麼資料型態？
+      1. `1.1 + 2.2` 等於多少？
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Strings (字串)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      #### 表示方法
+
+      Single quote (單引號)
+
+      ```python
+      'This is a string'
+      ```
+
+      字串中如果含有 `'` 則會出錯：
+
+      ```python
+      >>> 'It's great'
+      SyntaxError: EOL while scanning string literal
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      Double quote (雙引號)
+
+      與 `''` 並無差異
+
+      ```python
+      "This is a string"
+      ```
+
+      字串中如果含有 `"` 則會出錯：
+      ```python
+      >>> "My name is "阿吉""
+      SyntaxError: invalid syntax
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      Triple quote (三引號)
+
+      可為連續三個**單**引號或**雙**引號
+
+      ```python
+      '''This is a string'''
+      """This is a string"""
+      ```
+
+      <i class="fas fa-exclamation-triangle"></i> 在所有三引號內的空白或空行都會被視作字符
+
+      ```
+      >>> '''
+      ... This is the second line
+      ... 
+      ... This is the fourth line
+      ... '''
+      '\nThis is the second line\n\nThis is the fourth line\n'
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      #### 跳脫字符
+
+      - `\\`: literal `\`
+      - `\'`: literal `'`
+      - `\"`: literal `"`
+      - `\n`: 換行字符
+      - `\newline`: 換新的一行
+    
+      ```python
+      >>> print('\\')
+      \ 
+      >>> print('\'')
+      '
+      >>> print("\"")
+      "
+      >>> print('a\nb')
+      a
+      b
+      >>> print('a\
+      ... b')
+      ab
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      #### 分行
+
+      如果字串過長，亦可用跳脫字符 `\` 來分行：
+```python
+text = '台灣大學語言學研究所今年開了一門「\
+人文學群的Python程式入門，宗旨是希望用深入\
+簡單的方式讓沒有程式背景的人快速了解Python\
+程式語言的易學跟好用。'
+```
+
+      也可以用 `()` 來分行：
+
+```python
+text = (
+    '台灣大學語言學研究所今年開了一門「'
+    '人文學群的Python程式入門，宗旨是希望用深入'
+    '簡單的方式讓沒有程式背景的人快速了解Python'
+    '程式語言的易學跟好用。'
+)
+```
+
+      <i class="fas fa-exclamation-triangle"></i> 以上分行是沒有**逗點** `,` 分隔的
+
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
+    <textarea data-template>
+      #### 補充： 特殊前綴
+
+      `u''`: unicode string
+      ```python
+      >>> u'中文'
+      '中文'
+      ```
+
+      `b''`: byte string 
+      ```python
+      >>> '中文'.encode('utf-8')
+      b'\xe4\xb8\xad\xe6\x96\x87'
+      >>> b'abc123'
+      b'abc123'
+      ```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
+    <textarea data-template>
+      `r''`: raw string
+      ```python
+      >>> 'C:\Users\nicky\ntitled\text.txt' 
+      SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+      >>> r'C:\Users\nicky\ntitled\text.txt'
+      'C:\\Users\\nicky\\ntitled\\text.txt'
+      ```
+      `f''`: formatted string (*f-string*)
+      ```python
+      >>> target = '你爸'
+      >>> f'{target}在你後面，他非常火'
+      '你爸在你後面，他非常火'
+      >>> f'{somebody}在你後面，他非常火'
+      NameError: name 'somebody' is not defined
+      ```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+      #### 練習
+      1. 設定一個變數，在螢幕上輸出：
+          ```bash
+          你才xx,你全家都xx
+          ```
+      2. 請問以下兩者`x` 與 `y` 是否相同？
+
+          ```python
+          x = '''\
+          a\
+          b\
+          '''
+          
+          y = '''
+          a
+          b
+          ''' 
+          ``` 
+    </textarea>
+  </section>
+  <section data-background="https://media.giphy.com/media/T8Dhl1KPyzRqU/giphy.gif" data-markdown>
+    你們還在嗎？
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Lists (串列)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      Python 中的 `list` 是非常有彈性的，長度不用固定且可以隨時增加、修改或刪除其中的元素。
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      #### Mutable (可變性)
+
+      ```python
+      >>> a = ['a', 'b', 'c', 'd', 'e']
+      >>> a[2]
+      'b'
+      >>> a[2] = 'x'
+      >>> a[2]
+      'x'
+      >>> a
+      ['a', 'b', 'x', 'd', 'e']
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      #### Heterogeneous (異質性)
+
+      每一個元素都可以為不同的 `type`
+
+      ```python
+      a = [100, 'Aji', None, [1, 2, 3]]
+      ```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
+    <textarea data-template>
+      ### 補充： `array`
+      若強制某個 `list` 所有元素的 `type` 皆為相同，可用內建函示 [`array`](https://docs.python.org/3/library/array.html)
+
+      假設我們要確保某個 `array` 的元素都是 `int`，可以利用下列方式：
+
+      ```python
+      from array import array
+
+      a = array('i')  # 'i' 代表 Integer
+      ```
+
+      如此一來便能確保非 `int` 的資料不會被意外加入
+
+      ```python
+      >>> a.append(1)
+      >>> a
+      array('i', [1])
+      >>> a.append('a')
+      TypeError: an integer is required
+
+      ```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+      #### 練習
+      1. 建立一個包含 <u>`3` 個 長度為 `0` 的 `list`</u> 的 `list`
+      2. 請合併以下兩個 `list`
+          ```python
+          a = ['只', '要', '有', '心']
+          b = ['人', '人', '都', '可', '以', '是', 'Py', '神']
+          ```
+    </textarea>
+  </section>
+
+  <section data-background="https://media.giphy.com/media/xTiTnJ3BooiDs8dL7W/giphy.gif" data-markdown>
+    你在公🦐小
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Tuples (元組)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      與 `list` 相似，唯 `tuple` 之元素不可修改
+
+      ```python
+      # list
+      >>> x = ['豬', '隊', '友']
+      >>> x[0] = '狗'
+      >>> x
+      ['狗', '隊', '友']
+      >>> del x[0] 
+      >>> x
+      ['隊', '友']
+
+      # tuples
+      >>> y = ('豬', '隊', '友')
+      >>> y[0] = '狗'
+      TypeError: 'tuple' object does not support item assignment
+      >>> del y[0] 
+      TypeError: 'tuple' object doesn't support item deletion
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      `tuple` 佔用的記憶體空間較小
+
+      ```python
+      # list
+      >>> x = ['豬', '隊', '友']
+      >>> x.__sizeof__()
+      64
+      # tuples
+      >>> y = ('豬', '隊', '友')
+      >>> y.__sizeof__()
+      48
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      注意不要與其他資料型別搞混了：
+      ```python
+      >>> a = ('a', 'b')
+      >>> type(a)
+      <class 'tuple'>
+      ```
+
+      ```python
+      >>> a = ('a')
+      >>> type(a)
+      <class 'str'>
+      ```
+
+      ```python
+      >>> a = ('a', )
+      >>> type(a)
+      <class 'tuple'>
+      ```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+      #### 練習
+      1. 建立一長度為 `1` 的 `tuple` (元素不設限)
+      2. 把下列 `list` 轉換成 `tuple`
+          ```python
+          [5, 4, 8, 7]
+          ``` 
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Dictionaries (字典)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+`dict` 為 *鍵*-*值* (key-value)一組的資料型態，且可為**巢狀結構**
+
+```python
+profile = {
+    'institute': 'Graduate Institute of Linguistics',
+    'classrooms': [304, 305],
+    'faculties': [
+        {
+            'name': 'shukai',
+            'gender': 'male',
+        },
+        {
+            'name': 'limay',
+            'gender': 'female',
+        }
+    ]
+}
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      #### 建立方式
+      ```python
+      # 方法一
+      x = {'name': 'Aji', 'is_graduated': True, 'age': 23}
+
+      # 方法二
+      x = dict(name='Aji', is_graduated=True, age=23)
+
+      # 方法三
+      x = dict([['name', 'Aji'], ['is_graduated', True], ['age', 23]])
+
+      # 方法四
+      x = {}
+      x['name'] = 'Aji'
+      x['is_graduated'] = True
+      x['age'] = 23
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      只要是可以被hash的物件都可以做為 `dict` 的 key，
+      像是 `list` 或 `set` 此類不可被 hash 的物件就不可以當作 key
+
+      ```python
+      >>> d = {['a', 'b']: 'foo'}
+      TypeError: unhashable type: 'list'
+
+      # 原因是因為：
+      >>> hash(['a', 'b'])
+      TypeError: unhashable type: 'list'
+      ```
+
+      <i class="fas fa-exclamation-triangle"></i> 可被 hash ([雜湊](https://zh.wikipedia.org/zh-tw/散列)) 的資料型別都具有__不可變__的特性
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template data-separator="^---$">
+      #### 練習
+      1. 用 `dict` 建立你的個人檔案（例如：姓名、性別、年齡等）
+      1. 將以下列表格轉換成 `dict`
+
+| KEY | VALUE |
+|-----------------|-----------|
+| 孫生 瑋哥 酷炫 | 反骨男孩 |
+| Andy 家寧| 眾量級 |
+| 阿滴 滴妹| 阿滴英文 |
+      
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+      #### 參考解答
+      ```python
+      youtubers = {
+          ('孫生', '瑋哥', '酷炫'): '反骨男孩',
+          ('Andy', '家寧'): '眾量級',
+          ('阿滴', '滴妹'): '阿滴英文',
+      }
+      ```
+      取出 __阿滴 滴妹__ 這組網紅的團體名稱：
+
+      ```python
+      >>> key = ('阿滴', '滴妹')
+      >>> youtubers[key]
+
+      # 或不指定變數
+      >>> youtubers[('阿滴', '滴妹')]
+      ```
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Sets (集合)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      #### `set`
+      
+      `set` 的表示方式為 `{}`，跟 `dict` 有點像，    
+      不過 `dict` 一定是 key-value 為一組。  
+ 
+      ```python
+      # 這是 set
+      >>> a = {'a', 'b', 'c'}
+      >>> type(a)
+      <class 'set'>
+
+      # 這是 dict
+      >>> a = {'a': 0, 'b': 1, 'c': 2}
+      >>> type(a)
+      <class 'dict'>
+      ```
+      <i class="fas fa-exclamation-triangle"></i> 注意不要眼花
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      #### `frozenset`
+      
+      **Hashable** (可雜湊性)
+      
+      ```python
+      >>> hash(set(('a', 'b', 'c')))
+      TypeError: unhashable type: 'set'
+      >>> hash(frozenset(('a', 'b', 'c')))
+      -7811812079328027595
+      ```
+      
+      **Immutable** (不可變性)
+      
+      `frozenset` 中之元素為不可變動的。
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Booleans (布林)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      `True` 或 `False`
+
+      ```python
+      >>> type(True)
+      bool
+      >>> type(False)
+      bool
+      ```
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      ### None (空字符)
+    </textarea>
+  </section>
+  <section data-markdown> 
+    <textarea data-template>
+      `None` 就是空值，它的 `type` 為 `NoneType`
+
+      ```python
+      >>> None
+
+      >>> type(None)
+      NoneType
+      ```
+    </textarea>
+</section>

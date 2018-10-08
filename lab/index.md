@@ -1,4 +1,5 @@
 ---
+layout: default_pfh
 permalink: /PythonForHumanities/lab/
 ---
 
@@ -12,8 +13,8 @@ Lab Session
 | ----| -----|--------------------------------------|----------|
 | 1.  | 09/12|  課程簡介 （no lab session）           |           |
 | 2.  | 09/19|  脈絡：程式思維、開發環境                |   [🔗][w2] |
-| 3.  | 09/26|  觀察：分析問題（變數、指派、數字與字串）   |
-| 4.  | 10/03|  規則：語法結構（條件式、對應表）          |
+| 3.  | 09/26|  觀察：分析問題（變數、指派、數字與字串）   |   [🔗][w3] |
+| 4.  | 10/03|  規則：語法結構（條件式、對應表）          |  [🔗][w4]  |
 | 5.  | 10/10|  （國慶日）                            |
 | 6.  | 10/17|  重複：語法結構（迴圈、清單）             |
 | 7.  | 10/24|  階層：程式組織（函數定義、參數、回傳）     |
@@ -30,7 +31,8 @@ Lab Session
 | 18.  | 01/09|  繳交期末報告                           |
 
 [w2]:https://docs.google.com/presentation/d/1nvdXhE-HQqtjLFTL6zL1gcnQ-DVpHUETdTT00M28HI8/edit?usp=sharing
-
+[w3]:https://docs.google.com/presentation/d/1tC5rDWTjwftrwuXJux0ydRgz2eICsUnlRWPdBcZRgSU/edit?usp=sharing
+[w4]:https://docs.google.com/presentation/d/1ViWN7nhabkomNc508C1Am0Lz-FiaaRX2nps67Fi2kjI/edit?usp=sharing
 
 Python 作為人文學群的程式語言
 -------------------------
