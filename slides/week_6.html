@@ -219,9 +219,6 @@ cands.count('阿哲')
 # 找出第一次出現"中ㄟ"的位置
 cands.index('中ㄟ')
 
-# 找出最後第一次出現"中ㄟ"的位置
-cands.index('中ㄟ', -1)
-
 ```
     </textarea>
   </section>
@@ -320,7 +317,7 @@ gba.pop('節目類')
       pokemon_daan ^ pokemon_zhongshan
 
       # 9. 刪除 pokemon_zhongshan 集合中的"皮卡丘"
-      pokemon_zhongshan.remmove('皮卡丘')
+      pokemon_zhongshan.remove('皮卡丘')
       ```
     </textarea>
   </section>
@@ -353,13 +350,13 @@ not True
 
 判斷一個變數是否為 `None`，請用
 ```python
-x is None
+if x is None
 ```
 
 請**不要**用
 
 ```python
-x == None
+if x == None
 ```
       
     </textarea>
@@ -397,7 +394,7 @@ x == None
 </div>
 ---
 ```python
-if action == '微笑'
+if action == '微笑':
     if male == '帥哥':
         print('陽光')
     elif male == '醜男':
@@ -421,7 +418,7 @@ elif action == '講黃色笑話':
 if male == '宅男':
     print('宅')
 else:
-    if action == '微笑'
+    if action == '微笑':
         if male == '帥哥':
             print('陽光')
         elif male == '醜男':
@@ -440,7 +437,7 @@ else:
     <div style="display:flex">
       <div style="flex:1">
         <pre>
-          <code class="lang-python hljs">
+          <code class="lang-python hljs" data-trim>
 num = '12345678'
 money = 0
 if num.endswith('12345678'):
@@ -460,7 +457,7 @@ elif num.endswith('678'):
       </div>
       <div style="flex:1">
         <pre>
-          <code class="lang-python hljs">
+          <code class="lang-python hljs" data-trim>
 num = '12345678'
 money = 0
 if num.endswith('12345678'):
@@ -562,6 +559,9 @@ for name in people:
 暴力破解密碼
 
 ```python
+from datetime import datetime
+import random
+
 passcode = 9527  # 密碼
 counter = 0  # 計數器
 while datetime.now().second != 59:
