@@ -166,7 +166,7 @@ sent.endswith('ty')
       original_people = ['Sean', 'Joy']
 
       # 1. 複製 original_people
-      people = original.copy()
+      people = original_people.copy()
 
       # 2. 把 "Aji" 加入 people
       people.append('Aji')
@@ -326,12 +326,42 @@ gba.pop('節目類')
   </section>
   <section data-markdown>
     <textarea data-template>
-      ### Booleans
+### Booleans
+
++ AND
+```python
+True and False
+# 或
+True & True
+```
++ OR
+```python
+True or False
+# 或
+True | True
+```
++ NOT
+```python
+not True
+```
+
     </textarea>
   </section>
   <section data-markdown>
     <textarea data-template>
-      ### None
+### None
+
+判斷一個變數是否為 `None`，請用
+```python
+x is None
+```
+
+請**不要**用
+
+```python
+x == None
+```
+      
     </textarea>
   </section>
 </section>
@@ -350,21 +380,63 @@ gba.pop('節目類')
   </section>
   <section data-markdown>
     <textarea data-template>
-### IF ... ELIF ... ELSE
 
+### `if` ... `elif` ... `else` 
+<div style="font-size:14px">
+
+|              | 帥哥   | 醜男       | 宅男  |
+|--------------|--------|------------|------ |
+| *微笑*       | 陽光   | 猥褻       | 宅    |
+| *留鬍鬚*     | 有性格 | 拉塌       | 宅    |
+| *搭訕*       | 抱緊   | 報警       | 宅    |
+| *口甜舌滑*   | 風趣   | 流氓       | 宅    |
+| *對女士禮讓* | 體貼   | 不安好心   | 宅    |
+| *頭髮被風吹* | 瀟灑   | 頭皮屑亂漂 | 宅    |
+| *講黃色笑話* | 幽默   | 低級       | 宅    |
+
+</div>
+---
 ```python
-if male == '帥哥':
-    print('陽光')
-elif male == '醜男':
-    print('猥褻')
-elif male == '宅男':
-    print('宅')
+if action == '微笑'
+    if male == '帥哥':
+        print('陽光')
+    elif male == '醜男':
+        print('猥褻')
+    elif male == '宅男':
+        print('宅')
+elif action == '講黃色笑話':
+    if male == '帥哥':
+        print('幽默')
+    elif male == '醜男':
+        print('低級')
+    elif male == '宅男':
+        print('宅')
 ``` 
     </textarea>
   </section>
+  <section data-markdown>
+    <textarea data-template>
+或者可以這樣表示
+```python
+if male == '宅男':
+    print('宅')
+else:
+    if action == '微笑'
+        if male == '帥哥':
+            print('陽光')
+        elif male == '醜男':
+            print('猥褻')
+    elif action == '講黃色笑話':
+        if male == '帥哥':
+            print('幽默')
+        elif male == '醜男':
+            print('低級')
+```
+    </textarea>
+  </section>
   <section>
-    <h3>IF vs. ELIF</h3>
-    <p>發票對獎</p>
+    <h3><code>if</code> vs. <code>elif</code></h3>
+    <p>發票對獎： 何種計算方式才正確？</p>
     <div style="display:flex">
       <div style="flex:1">
         <pre>
@@ -408,5 +480,107 @@ if num.endswith('678'):
       </div>
     </div>
   </section>
-</section>
+  <section data-markdown>
+    <textarea data-template>
+      ### `for`
+      不知道中午要吃什麼？
+      ```python
+      import random
 
+      # 列出喜歡吃的餐廳
+      cands = ['八方雲集', '越南清化河粉', '麥當勞', '肯德基', '四海遊龍', '活大自助餐', '發現義大利麵', '水源市場陳師父', '三顧茅廬', '摩斯漢堡']
+
+      # 隨機排序喜歡吃的餐廳
+      random.shuffle(cands)
+     
+      for i in range(5):
+          weekday = i + 1 
+          restaurant = cands[i]
+          print(f'星期{weekday}: {restaurant}')
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### `while`
+記得定時喝水！
+```python
+import time
+
+while True:
+    time.sleep(10)
+    print('該喝水惹~~~~~~')
+```
+
+加上「倒數計時」功能
+```python
+countdown = 10
+while True:
+    for i in range(countdown):
+        print(countdown - i)
+        time.sleep(1)
+    print('該喝水惹~~~~~~')
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### `pass`, `continue`, `break` 
+把人名改成中二的暱稱
+```python
+people = ['昱翔', '阿吉', '舒凱', '琼玉', '智堯', '大成']
+template = '【卐乂Oo煞气ㄟ{name}oO乂卍】' 
+
+# pass
+for name in people:
+    if name == '舒凱':
+        pass
+    else:
+        print(template.format(name=name))
+
+# continue
+for name in people:
+    if name == '舒凱':
+        continue
+    else:
+        print(template.format(name=name))
+    print('-' * 40)  # 分隔線
+
+# break
+for name in people:
+    if name == '舒凱':
+        break
+    else:
+        print(template.format(name=name))
+    print('-' * 40)
+
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+暴力破解密碼
+
+```python
+passcode = 9527  # 密碼
+counter = 0  # 計數器
+while datetime.now().second != 59:
+    comb = list(range(10000))
+    random.shuffle(comb)
+    guess = comb.pop()
+    if guess == passcode:
+        print('The passcode is', guess)
+        print(f'attempts: {counter}')
+        break
+    if datetime.now().second % 2 == 0:
+        continue
+    else:
+        left = 60 - datetime.now().second
+        print(f'(剩餘秒數:{left}) 破解中: {guess}', end='\r')
+        counter += 1
+else:
+     print('無法破解密碼')
+```
+    </textarea>
+  </section>
+</section>
