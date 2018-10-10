@@ -1,0 +1,586 @@
+---
+layout: slide_pfh
+permalink: PythonForHumanities/slides/week6
+title: 資料型態應用與流程控制
+---
+
+<section>
+  <section data-background-transition="zoom" data-background-image="http://wx2.sinaimg.cn/large/006DFKaTly1ff12ztn2juj306n05s0st.jpg" data-background-size="200px" data-background-repeat="repeat">
+    <div style="color:red;background:white;opacity:0.9">
+      <p style="font-weight:800;">◢▆▅▄▃_崩╰(〒皿〒)╯潰_▃▄▅▆◣  </p>
+      <p>你 到 底 在 在 公 🦐 小</p> 
+    </div>
+  </section>
+  <section data-background-transition="zoom" data-background="#b5533c" data-markdown>
+    <textarea data-template>
+      ### [ji.py][ji.py-link]
+      [吉.py][ji.py-link] 是一個幫助學習Python的小工具
+      [ji.py-link]: https://github.com/amigamel/ji.py
+    </textarea>
+  </section>
+  <section id="mac-tweak" data-background-transition="zoom" data-background="#0abab5" data-markdown>
+    <textarea data-template>
+      ### <i class="fab fa-apple"></i> Mac 的捧油
+
+      0. 輸入 <kbd>CTRL</kbd> + <kbd>`</kbd> 打開 TERMINAL
+      0. 把以下這段貼上並按下 <kbd>ENTER</kbd>
+
+      ```bash
+      echo "alias pip=pip3" >> ~/.bash_profile && exit 
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### 開始使用[吉.py](https://github.com/amigcamel/ji.py) 
+
+      安裝/更新
+      ```bash
+      $ pip install -U ji.py
+      ```
+
+      執行
+      ```bash
+      $ ji.py
+      ```
+
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      ## 資料型別應用
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#b5533c" data-markdown>
+    <textarea data-template>
+      ### <i class="fas fa-exclamation-circle"></i> 請務必閱讀 
+      + [Built-in Types](https://docs.python.org/3/library/stdtypes.html)
+      + [Data Structures](https://docs.python.org/3/tutorial/datastructures.html)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Numbers 
+      0. (  ( ( 6 + 22 ) ÷ 4 ) - 3 )<sup><small>2</small></sup>
+          ```python
+          (((6 + 22) / 4) - 3) ** 2
+          ```
+      0. 圓周率四捨五入至小數點第五位 
+          ```python
+          import math
+          round(math.pi, 5)
+          ```
+      0. 將 1 到 10 做加總
+          ```python
+          sum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+          ```
+      0. -9527 的絕對值
+          ```python
+          abs(-9527)
+          ```
+    </textarea>
+  </section>
+  <section data-background="#2C3539" data-markdown>
+    <textarea data-template>
+      ### Strings
+
+      情境 1 
+      ```python
+      sent = '   紅鯉魚家有頭小綠驢叫李屢屢，綠鯉魚家有頭小紅驢叫呂里里，紅鯉\
+魚說他家的李屢屢要比綠鯉魚家的呂里里綠，綠鯉魚說他家的呂里里要比紅鯉魚家的\
+李屢屢紅，不只是紅鯉魚比綠鯉魚的驢綠，還是綠鯉魚比紅鯉魚的驢紅    '
+
+      # 1.去除字首字尾多餘空白 
+      sent = sent.strip()
+
+      # 2.計算句子長度
+
+      len(sent)
+
+      # 3."藍鯉魚"是否有出現在句子內？ 
+
+      '藍鯉魚' in sent
+
+      # 4.將句子以"，"分隔成一個 `list`  
+
+      sent = sent.split('，')
+      ```
+    </textarea>
+  </section>
+  <section data-background="#2C3539" data-markdown>
+    <textarea data-template>
+      情境 2 
+
+      ```python
+      sent = '我好開心R'
+
+      # 1. 把"開心"取代為"咖勳" 
+      sent = sent.replace('開心', '咖勳')
+
+      # 2. 把字尾重複 30 次
+      sent = sent[:-1] + sent[-1] * 30 
+
+      # 3. 把英文字母轉成小寫
+      sent = sent.lower()
+
+      # 4. 計算出現幾個"r" 
+      sent.count('r')
+      ```
+    </textarea>
+  </section>
+  <section data-background="#2C3539" data-markdown>
+    <textarea data-template>
+      情境 3
+
+```python
+sents = [
+    'graduate institute of linguistics',
+    'national taiwan university'
+] 
+
+# 1. 用"at"將 sents 合併為字串 
+
+sent = ' at '.join(sents)
+
+# 2. 將第一個字轉成大寫
+
+sent = sent.capitalize()
+
+# 3. 將每一個字的首字轉為大寫 
+
+sent = sent.title()
+
+# 4. 檢查字串是否為"ty"結尾 
+
+sent.endswith('ty')
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Lists 
+      ```python
+      original_people = ['Sean', 'Joy']
+
+      # 1. 複製 original_people
+      people = original_people.copy()
+
+      # 2. 把 "Aji" 加入 people
+      people.append('Aji')
+      
+      # 把 "Richard" 和 "Chihyao" 也加入
+      people.extend(['Richard', 'Chihyao'])
+
+      # 3. 把 "Shukai" 加到 people 的第 1 位
+      people.insert(0, 'Shukai')
+
+      # 4. 計算有多少人
+      len(people)
+
+      # 5. 按照字母排序
+      people.sort()
+      
+      # 6. 反轉 people
+      people.reverse()
+
+      # 7. 把 "Aji" 刪除
+      people.remove('Aji')
+
+      # 8. 刪除最後一位
+      people.pop()
+
+      # 9. 找出 "Sean" 在第幾的位置
+      people.index('Sean')
+
+      # 10. 計算 "Joy" 出現幾次
+      people.count('Joy')
+
+      # 11. 清空 people
+      people.clear()
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Tuples
+
+```python
+cands = (
+    '小智', '阿哲', '中ㄟ', '阿哲', '中ㄟ', '阿哲', 
+    '阿哲', '小智', '阿哲', '阿哲', '小智', '中ㄟ', '阿哲',
+)
+
+# 計算"阿哲"出現的次數
+cands.count('阿哲')
+
+# 找出第一次出現"中ㄟ"的位置
+cands.index('中ㄟ')
+
+# 找出最後第一次出現"中ㄟ"的位置
+cands.index('中ㄟ', -1)
+
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### Dictionaries 
+
+```python
+gba = {
+    '節目類': {
+        '戲劇節目獎': {
+            '入圍者': ['《城市情歌》', '客家劇場－《台北歌手》', '《麻醉風暴2》', '植劇場－《花甲男孩轉大人》', '《翻牆的記憶》'],
+            '得獎者': '植劇場－《花甲男孩轉大人》',
+        },
+        '迷你劇集獎': {
+            '入圍者': ['HIStory2－《越界》', '《他們在畢業的前一天爆炸2》', '外鄉女－《愛人的選擇》', '《恐怖高校劇場之直播中二間》'],
+            '得獎者': None,
+        },
+    },
+    '個人類': {
+        '戲劇節目男主角獎': {
+            '入圍者': ['李國毅', '張軒睿', '莫子儀', '黃健瑋', '盧廣仲'],
+            '得獎者': '盧廣仲',
+
+        },
+        '戲劇節目女主角獎': {
+            '入圍者': ['孟耿如', '孫可芳', '黃姵嘉', '嚴正嵐', '嚴藝文'],
+        },
+    },
+}
+
+
+# 1. 找出 gba 中共有幾個幾 類 
+len(gba)
+
+# 2. 找出 節目獎-戲劇節目獎 的 得獎者
+gba['節目類']['戲劇節目獎']['得獎者']
+
+# 3. 檢查"戲劇節目女主角獎"是否有在 個人類 裡面 
+'戲劇節目女主角獎' in gba['個人類']
+
+# 4. 把 節目獎-迷你劇集獎 的 得獎者 補上 (《他們在畢業的前一天爆炸2》)
+gba['節目類']['迷你劇集獎']['得獎者'] = '《他們在畢業的前一天爆炸2》' 
+# or
+gba['節目類']['迷你劇集獎']['得獎者'] =  gba['節目類']['迷你劇集獎']['入圍者'][1]
+
+# 5. 把 個人類-戲劇節目女主角獎 增加 得獎者 (黃姵嘉)
+gba['個人類']['戲劇節目女主角'] = '黃姵嘉'
+
+# 6. 把 個人類-戲劇節目男主角獎 的 得獎者 改為"劉阿吉"
+gba['個人類']['戲劇節目男主角獎'] = '劉阿吉'
+
+# 7. 找出 節目類 中的所有獎項
+gba['節目類'].keys()
+
+# 8. 找出所有 類 的獎項
+gba.values()
+
+# 9. 刪除 節目類
+del gba['節目類']
+# or 
+gba.pop('節目類')
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### Sets
+
+      ```python
+      大安區 = ['向尾喵', '向尾喵', '壺壺', '凱西', '蚊香蝌蚪', '盔甲鳥', '盔甲鳥', '壺壺', '蜻蜻蜓', '跳跳豬', '獨角蟲', '獨角蟲', '獨角蟲', '獨角蟲', '勾魂眼', '觸手百合', '跳跳豬', '盔甲鳥', '蜻蜻蜓', '觸手百合', '向尾喵', '凱西', '獨角蟲', '壺壺', '向尾喵', '勾魂眼', '獨角蟲', '凱西', '跳跳豬', '壺壺', '蜻蜻蜓', '獨角蟲', '跳跳豬', '盔甲鳥', '盔甲鳥', '跳跳豬', '壺壺', '觸手百合', '蜻蜻蜓', '蜻蜻蜓', '蜻蜻蜓', '蜻蜻蜓', '觸手百合', '觸手百合']
+      中山區 = ['小小象', '可達鴨', '跳跳豬', '向尾喵', '菊石獸', '可達鴨', '勾魂眼', '凱西', '向尾喵', '向尾喵', '壺壺', '小小象', '凱西', '壺壺', '菊石獸', '可達鴨', '壺壺', '皮卡丘', '壺壺', '利牙魚', '小小象', '菊石獸', '可達鴨', '勾魂眼', '可達鴨', '皮卡丘', '利牙魚', '壺壺', '菊石獸', '壺壺', '小小象', '壺壺', '皮卡丘', '可達鴨', '凱西']
+
+      # 1. 找出 大安區 中，不重複的寶可夢
+      pokemon_daan = set(大安區)
+
+      # 2. 找出 中山區 中，不重複的寶可夢
+      pokemon_zhongshan = set(中山區)
+
+      # 3. 計算 大安區 中，總共有多少不重複的寶可夢 
+      len(pokemon_daan)
+
+      # 4. 檢查"可達鴨"是否有在 大安區 裡面 
+      '可達鴨' in pokemon_daan 
+
+      # 5. 找出 大安區 有但是 中山區 沒有的寶可夢 
+      pokemon_daan - pokemon_zhongshan
+
+      # 6. 找出 大安區 有且 中山區 也有的寶可夢
+      pokemon_daan & pokemon_zhongshan
+
+      # 7. 找出所有在 大安區 與 中山區 出現的寶可夢
+      pokemon_daan | pokemon_daan
+
+      # 8. 找出 大安區 與 中山區 的所有寶可夢，但排除共有的寶可夢
+      pokemon_daan ^ pokemon_zhongshan
+
+      # 9. 刪除 pokemon_zhongshan 集合中的"皮卡丘"
+      pokemon_zhongshan.remmove('皮卡丘')
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### Booleans
+
++ AND
+```python
+True and False
+# 或
+True & True
+```
++ OR
+```python
+True or False
+# 或
+True | True
+```
++ NOT
+```python
+not True
+```
+
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### None
+
+判斷一個變數是否為 `None`，請用
+```python
+x is None
+```
+
+請**不要**用
+
+```python
+x == None
+```
+      
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      ## 流程控制 
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#b5533c" data-markdown>
+    <textarea data-template>
+      ### <i class="fas fa-exclamation-circle"></i> 請務必閱讀 
+      [More Control Flow Tools](https://docs.python.org/3.7/tutorial/controlflow.html)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+
+### `if` ... `elif` ... `else` 
+<div style="font-size:14px">
+
+|              | 帥哥   | 醜男       | 宅男  |
+|--------------|--------|------------|------ |
+| *微笑*       | 陽光   | 猥褻       | 宅    |
+| *留鬍鬚*     | 有性格 | 拉塌       | 宅    |
+| *搭訕*       | 抱緊   | 報警       | 宅    |
+| *口甜舌滑*   | 風趣   | 流氓       | 宅    |
+| *對女士禮讓* | 體貼   | 不安好心   | 宅    |
+| *頭髮被風吹* | 瀟灑   | 頭皮屑亂漂 | 宅    |
+| *講黃色笑話* | 幽默   | 低級       | 宅    |
+
+</div>
+---
+```python
+if action == '微笑'
+    if male == '帥哥':
+        print('陽光')
+    elif male == '醜男':
+        print('猥褻')
+    elif male == '宅男':
+        print('宅')
+elif action == '講黃色笑話':
+    if male == '帥哥':
+        print('幽默')
+    elif male == '醜男':
+        print('低級')
+    elif male == '宅男':
+        print('宅')
+``` 
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+或者可以這樣表示
+```python
+if male == '宅男':
+    print('宅')
+else:
+    if action == '微笑'
+        if male == '帥哥':
+            print('陽光')
+        elif male == '醜男':
+            print('猥褻')
+    elif action == '講黃色笑話':
+        if male == '帥哥':
+            print('幽默')
+        elif male == '醜男':
+            print('低級')
+```
+    </textarea>
+  </section>
+  <section>
+    <h3><code>if</code> vs. <code>elif</code></h3>
+    <p>發票對獎： 何種計算方式才正確？</p>
+    <div style="display:flex">
+      <div style="flex:1">
+        <pre>
+          <code class="lang-python hljs">
+num = '12345678'
+money = 0
+if num.endswith('12345678'):
+    money += 200000
+elif num.endswith('2345678'):
+    money += 40000
+elif num.endswith('345678'):
+    money += 10000
+elif num.endswith('45678'):
+    money += 4000
+elif num.endswith('5678'):
+    money += 1000 
+elif num.endswith('678'):
+    money += 200
+          </code>
+        </pre>
+      </div>
+      <div style="flex:1">
+        <pre>
+          <code class="lang-python hljs">
+num = '12345678'
+money = 0
+if num.endswith('12345678'):
+    money += 200000
+if num.endswith('2345678'):
+    money += 40000
+if num.endswith('345678'):
+    money += 10000
+if num.endswith('45678'):
+    money += 4000
+if num.endswith('5678'):
+    money += 1000 
+if num.endswith('678'):
+    money += 200
+         </code>
+        </pre>
+      </div>
+    </div>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+      ### `for`
+      不知道中午要吃什麼？
+      ```python
+      import random
+
+      # 列出喜歡吃的餐廳
+      cands = ['八方雲集', '越南清化河粉', '麥當勞', '肯德基', '四海遊龍', '活大自助餐', '發現義大利麵', '水源市場陳師父', '三顧茅廬', '摩斯漢堡']
+
+      # 隨機排序喜歡吃的餐廳
+      random.shuffle(cands)
+     
+      for i in range(5):
+          weekday = i + 1 
+          restaurant = cands[i]
+          print(f'星期{weekday}: {restaurant}')
+      ```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### `while`
+記得定時喝水！
+```python
+import time
+
+while True:
+    time.sleep(10)
+    print('該喝水惹~~~~~~')
+```
+
+加上「倒數計時」功能
+```python
+countdown = 10
+while True:
+    for i in range(countdown):
+        print(countdown - i)
+        time.sleep(1)
+    print('該喝水惹~~~~~~')
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### `pass`, `continue`, `break` 
+把人名改成中二的暱稱
+```python
+people = ['昱翔', '阿吉', '舒凱', '琼玉', '智堯', '大成']
+template = '【卐乂Oo煞气ㄟ{name}oO乂卍】' 
+
+# pass
+for name in people:
+    if name == '舒凱':
+        pass
+    else:
+        print(template.format(name=name))
+
+# continue
+for name in people:
+    if name == '舒凱':
+        continue
+    else:
+        print(template.format(name=name))
+    print('-' * 40)  # 分隔線
+
+# break
+for name in people:
+    if name == '舒凱':
+        break
+    else:
+        print(template.format(name=name))
+    print('-' * 40)
+
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+暴力破解密碼
+
+```python
+passcode = 9527  # 密碼
+counter = 0  # 計數器
+while datetime.now().second != 59:
+    comb = list(range(10000))
+    random.shuffle(comb)
+    guess = comb.pop()
+    if guess == passcode:
+        print('The passcode is', guess)
+        print(f'attempts: {counter}')
+        break
+    if datetime.now().second % 2 == 0:
+        continue
+    else:
+        left = 60 - datetime.now().second
+        print(f'(剩餘秒數:{left}) 破解中: {guess}', end='\r')
+        counter += 1
+else:
+     print('無法破解密碼')
+```
+    </textarea>
+  </section>
+</section>
