@@ -246,3 +246,58 @@ else:
     </textarea>
   </section>
 </section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+### Comprehensions
+
+```python
+members = [['國企系', 'Lisa'], ['經濟系', '志浩'], ['外文系', '若昀'], ['外文系', '圓滿'], ['經濟系', '世明'], ['圖資系', '蔡伯'], ['外文系', '以晴'], ['圖資系', '小香'], ['圖資系', '英俊'], ['國企系', 'Ella'], ['歷史系', '珍珍'], ['社會系', '大周'], ['社會系', '米珍'], ['經濟系', '阿青'], ['政治系', '阿隆'], ['經濟系', '麒麟'], ['外文系', '子成'], ['社會系', '淑芳'], ['外文系', '無限'], ['經濟系', '海平'], ['社會系', '莎莎'], ['經濟系', '偉光'], ['歷史系', '韋如'], ['外文系', '玫心']]
+```
+
+`list` comprehension
+```python
+people = [name for (department, name) in members]
+```
+
+`for` loop
+```python
+people = []
+for (department, name) in members:
+    people.append(name)
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+`dict` comprehension
+```python
+people = {name: department for (department, name) in members} 
+```
+
+`for` loop
+```python
+people = {} 
+for (department, name) in members:
+    people[name] = department
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+`set` comprehension
+```python
+departments = {department for (department, name) in members}
+```
+
+`for` loop
+```python
+departments = set() 
+for (department, name) in members:
+    departments.add(department)
+```
+
+    </textarea>
+  </section>
+</section>
