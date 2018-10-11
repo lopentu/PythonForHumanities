@@ -27,16 +27,16 @@ repository_url: https://github.com/lopentu/PythonForHumanities
 |   1    |  09/12   |課程概述                                      |  [🔗][s1] |
 |   2    |  09/19   |[環境建置與編輯器安裝][w2]                    |  [🔗][s2] |
 |   3    |  09/26   |[程式編寫與執行基本概念][w3]                  |  [🔗][s3] |
-|   4    |  10/03   |語法結構與基本資料型態（I）                   |  [🔗][s4] |
+|   4    |  10/03   |[資料型態介紹][w4]                            |  [🔗][s4] |
 |   5    |  10/10   |國慶日放假                                    |           |
-|   6    |  10/17   |語法結構與基本資料型態（II）                  |           |
-|   7    |  10/24   |函式與模組                                    |           |
-|   8    |  10/31   |字串處理與正規表示法                          |           |
-|   9    |  11/07   |期中考                                        |           |
-|   10   |  11/14   |正規表示法應用                                |           |
-|   11   |  11/21   |基本中文文本資料分析                          |           |
-|   12   |  11/28   |網路文本資料擷取（I）                         |           |
-|   13   |  12/05   |網路文本資料擷取（II）                        |           |
+|   6    |  10/17   |資料型態應用                                  |           |
+|   7    |  10/24   |流程控制                                      |           |
+|   8    |  10/31   |函式與模組                                    |           |
+|   9    |  11/07   |字串處理與正規表示法                          |           |
+|   10   |  11/14   |期中考                                        |           |
+|   11   |  11/21   |正規表示法應用                                |           |
+|   12   |  11/28   |基本中文文本資料分析                          |           |
+|   13   |  12/05   |網路文本資料擷取                              |           |
 |   14   |  12/12   |資料存儲                                      |           |
 |   15   |  12/19   |文本資料分析與自然語言處理套件介紹            |           |
 |   16   |  12/26   |資料視覺化套件介紹                            |           |
@@ -47,10 +47,12 @@ repository_url: https://github.com/lopentu/PythonForHumanities
 [s2]: ./slides/week2.html
 [s3]: ./slides/week3.html
 [s4]: ./slides/week4.html
+[s6]: ./slides/week6.html
+[s7]: ./slides/week7.html
 [w2]: {% post_url PythonForHumanities/2018-09-19-環境建置與編輯器安裝 %}
 [w3]: {% post_url PythonForHumanities/2018-09-26-程式編寫與執行基本概念 %}
-[w4]: {% post_url PythonForHumanities/2018-10-03-語法結構與基本資料型態（I） %}
-[w6]: {% post_url PythonForHumanities/2018-10-17-語法結構與基本資料型態（II） %}
+[w4]: {% post_url PythonForHumanities/2018-10-03-資料型態介紹 %}
+[w6]: {% post_url PythonForHumanities/2018-10-17-資料型態應用與流程控制 %}
 [w7]: {% post_url PythonForHumanities/2018-10-24-函式與模組 %}
 [w8]: {% post_url PythonForHumanities/2018-10-31-字串處理與正規表示法 %}
 [w10]: {% post_url PythonForHumanities/2018-11-14-正規表示法應用 %}
