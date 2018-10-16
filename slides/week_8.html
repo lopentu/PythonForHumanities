@@ -1,0 +1,156 @@
+---
+layout: slide_pfh
+permalink: PythonForHumanities/slides/week8
+title: 函式與模組
+---
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+## Function (函式)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 目的
+
++ 程式組織化
++ DRY - Don't Repeat Yourself
+
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 內建函式
+
+以下是已提過的內建函式
+
+|          |          |            |           |
+| -------- | -------- | ---------- | --------- |
+|`dict() ` |`input()` | `print()`  | `str()  ` |
+|`eval() ` |`int()  ` | `range()`  | `sum()  ` |
+|`float()` |`len()  ` | `round()`  | `tuple()` |
+|`hash() ` |`list() ` | `set()  `  | `type() ` |
+
+[<i class="fas fa-exclamation-circle"></i> 完整內建函數請點此](https://docs.python.org/3/library/functions.html)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 語法
+
+定義函式
+
+```python
+def function_name(argument1, argument2):
+    """Docstring."""
+    return expression
+```
+
+呼叫函式
+
+```python
+function_name()
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+<i class="fas fa-exclamation-triangle"></i> 注意
+
++ 函式首字請用**小寫**
++ **Docstring** (說明文字) 是非必要的
++ 冒號 `:` 下一行要記得**空四格**
++ 沒有 `return` 的話，一律回傳 `None`
++ 參數數量沒有限制，也可以不帶參數
++ 呼叫函式時，千萬不要忘記那個括號 `()`
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+不帶參數
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+帶參數
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+預設參數
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+不使用 `return` 的情境
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+必備參數 選擇性參數
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
+    <textarea data-template>
+### 補充： `lambda`
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 練習
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+## Module (模組)
+
+```python
+import module
+```
+
+```python
+from module import function
+```
+
+```python
+from module import function as alias
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 目的
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 內建模組
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 語法
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+<i class="fas fa-exclamation-triangle"></i> 注意
+
++ 避免 **circular imports**
++ 避免汙染命名空間
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 練習
+    </textarea>
+  </section>
+</section>
