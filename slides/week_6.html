@@ -88,6 +88,15 @@ title: 資料型態應用
 6÷2(1+2)=?
     </textarea>
   </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 參考答案
+
+```python
+ans = 6 / 2 * (1 + 2)
+```
+    </textarea>
+  </section>
 </section>
 
 <section>
@@ -182,6 +191,28 @@ sent = '紅鯉魚家有頭小綠驢叫李屢屢，綠鯉魚家有頭小紅驢叫
 3. 把逗點改成換行 
     </textarea>
   </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 參考答案
+
+1. 把 _鯉魚_ 換成 _鮭魚_
+```python
+sent = sent.replace('鯉魚', '鮭魚')
+```
+
+2. 請問 _紅鮭魚_ 和 _綠鮭魚_ 誰比較多？
+```python
+# 請自行比較以下結果
+sent.count('紅鮭魚')
+sent.count('綠鮭魚')
+```
+
+3. 把逗點改成換行 
+```python
+sent = sent.replace('，', '\n')
+```
+    </textarea>
+  </section>
 </section>
 
 <section>
@@ -243,6 +274,29 @@ stars = ['周子瑜', '許瑋甯', '張鈞甯', '蔡依林', '郭雪芙', '林�
 2. 把 _邵雨薇_ 加到第一名
 3. 找出 _張景嵐_ 排名第幾
 4. 把名單由由最後一名開始排
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 參考答案
+
+1. 移除 _林志玲_
+```python
+stars.pop()
+```
+2. 把 _邵雨薇_ 加到第一名
+```python
+stars.insert(0, '邵雨薇')
+```
+3. 找出 _張景嵐_ 排名第幾
+```python
+stars.index('張景嵐')
+```
+4. 把名單由由最後一名開始排
+```python
+stars.reverse()
+```
+
     </textarea>
   </section>
 </section>
@@ -354,6 +408,28 @@ rap_songs = {
 1. 計算總共有幾首歌
     </textarea>
   </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 參考答案
+
+1. 列出所有饒舌歌手
+```python
+rap_songs.keys()
+```
+1. 移除假饒舌的那位
+```python
+rap_songs.pop('沈玉琳')
+```
+1. 把錯誤歌手名稱改正
+```python
+rap_songs['周湯豪'] = rap_songs.pop('周躺好')
+```
+1. 計算總共有幾首歌
+```python
+len(rap_songs)
+```
+    </textarea>
+  </section>
 </section>
 
 <section>
@@ -410,7 +486,24 @@ top10_2016 = ['Afrojack', 'Armin Van Buuren', 'David Guetta', 'Dimitri Vegas & L
 3. 誰連續兩年都進榜？
     </textarea>
   </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 參考答案
 
+1. 2017年新進榜的有誰？
+```python
+set(top10_2017) - set(top10_2016)
+```
+2. 誰在2017未進榜？
+```python
+set(top10_2016) - set(top10_2017)
+```
+3. 誰連續兩年都進榜？
+```python
+set(top10_2016) & set(top10_2017)
+```
+    </textarea>
+  </section>
 </section>
 
 <section>
