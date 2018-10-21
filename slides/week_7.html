@@ -17,6 +17,9 @@ title: 流程控制
   <section data-markdown>
     <textarea data-template>
 ### `if` ... `elif` ... `else` 
+
+<i class="fas fa-caret-right"></i> *帥哥與醜男的差別*
+
 <div style="font-size:20px">
 
 |              | 帥哥   | 醜男       | 宅男  |
@@ -81,12 +84,52 @@ else:
 ```
     </textarea>
   </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 練習
+
+> 有個工程師某日在下班前接到老婆的電話...  
+老婆說：「下班順便帶十個包子回家，如果看到賣西瓜的，就買一個。」  
+晚上工程師回到家，老婆看了就問：「怎麼只買了一個包子？」  
+工程師：「因為看到賣西瓜的。」  <!-- .elements style="font-size:20px;text-align: left"> -->
+[(改編自 PTT- joke板)](https://www.ptt.cc/man/joke/DE63/D4EB/D334/M.1297590153.A.208.html)
+
+1. 請寫出 **工程師** 的邏輯式
+2. 請寫出 **老婆** 的邏輯式
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 參考答案
+
+```python
+# 工程師
+baozi = 0
+if vendor == '西瓜':
+    baozi += 1
+else:
+    baozi += 10
+
+# 老婆
+baozi = 0
+watermelon = 0
+if vendor == '西瓜':
+    watermelon = 1
+else:
+    baozi = 10
+```
+*課程後公佈*
+{% comment %} 
+{% endcomment %}
+
+    </textarea>
+  </section>
 </section>
 
 <section>
   <section>
     <h3><code>if</code> vs. <code>elif</code></h3>
-    <p>發票對獎： 何種計算方式才正確？</p>
+    <p><i class="fas fa-caret-right"></i> <i>發票對獎： 何種計算方式才正確？</i></p>
     <div style="display:flex">
       <div style="flex:1">
         <pre>
@@ -130,27 +173,113 @@ if num.endswith('678'):
       </div>
     </div>
   </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 練習
+
+1. 會議費用1,000元，學生打八折，台大學生打五折
+2. 會議費用1,000元，學生打八折，台大學生再打五折
+
+```python
+price = 1000
+profile = {
+  'name': 'Aji',
+  'occupation': 'student',
+  'university': 'NTU', 
+}
+```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 參考答案
+
+1 會議費用1,000元，學生打八折，台大學生打五折
+
+```python
+price = 1000
+if profile['occupation'] == 'student':
+    if profile['university'] == 'NTU':
+        price *= 0.5
+    else:
+        price *= 0.8
+else:
+    pass
+```
+
+2 會議費用1,000元，學生打八折，台大學生再打五折
+
+```python
+price = 1000
+if profile['occupation'] == 'sutdent':
+    price *= 0.5
+if profile['university'] == 'NTU':
+    price *= 0.8
+```
+*課程後公佈*
+{% comment %} 
+{% endcomment %}
+
+    </textarea>
+  </section>
 </section>
 
 <section>
   <section data-markdown>
     <textarea data-template>
-      ### `for`
-      不知道中午要吃什麼？
-      ```python
-      import random
+### `for`
+<i class="fas fa-caret-right"></i> *不知道中午要吃什麼？*
+```python
+import random
 
-      # 列出喜歡吃的餐廳
-      cands = ['八方雲集', '越南清化河粉', '麥當勞', '肯德基', '四海遊龍', '活大自助餐', '發現義大利麵', '水源市場陳師父', '三顧茅廬', '摩斯漢堡']
+# 列出喜歡吃的餐廳
+cands = ['八方雲集', '越南清化河粉', '麥當勞', '肯德基', '四海遊龍', '活大自助餐', '發現義大利麵', '水源市場陳師父', '三顧茅廬', '摩斯漢堡']
 
-      # 隨機排序喜歡吃的餐廳
-      random.shuffle(cands)
-     
-      for i in range(5):
-          weekday = i + 1 
-          restaurant = cands[i]
-          print(f'星期{weekday}: {restaurant}')
-      ```
+# 隨機排序喜歡吃的餐廳
+random.shuffle(cands)
+
+for i in range(5):
+    weekday = i + 1 
+    restaurant = cands[i]
+    print(f'星期{weekday}: {restaurant}')
+```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 練習
+
+1. 用兩個迴圈輸出九九乘法表
+2. 以下為某班成績，請把每個人的分數乘以1.5後，再加上20分，最後在四捨五入至整數，超過100分以100分計
+```python
+records = [22, 59, 89, 48, 65, 38, 71, 65, 49, 92]
+```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 參考答案
+
+九九乘法表
+```python
+for i in range(1, 10):
+    for j in range(1, 10):
+        print(f'{i} x {j} = {i * j}')
+```
+成績加權
+```python
+records = [22, 59, 89, 48, 65, 38, 71, 65, 49, 92]
+new_records = []
+for i in records:
+   res = i * 1.5 + 20
+   if res >= 100:
+       res = 100
+   new_records.append(res)
+```
+*課程後公佈*
+{% comment %} 
+{% endcomment %}
+
     </textarea>
   </section>
 </section>
@@ -159,7 +288,7 @@ if num.endswith('678'):
   <section data-markdown>
     <textarea data-template>
 ### `while`
-記得定時喝水！
+<i class="fas fa-caret-right"></i> *記得定時喝水！*
 ```python
 import time
 
@@ -179,13 +308,64 @@ while True:
 ```
     </textarea>
   </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 練習
+
+終極密碼戰：答案為1-100中的其中一個數字
+
+```python
+import random
+ans = random.choice(range(101))
+```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 參考答案
+
+```python
+import random
+ans = random.choice(range(1, 101))
+
+guess = None
+min = 0
+max = 100
+
+while guess != ans:
+    try:
+        guess = input('你猜的數字是： ')
+        guess = int(guess)
+        if guess > max or guess < min:
+            print(f'請輸入介於{min}到{max}之間的數字')
+            continue
+        if guess > ans:
+            max = guess
+        elif guess < ans:
+            min = guess
+        print(f'答案在{min}到{max}之間')
+    except KeyboardInterrupt:
+        print('使用者中斷')
+        break
+    finally:
+        print('遊戲終止')
+else:
+    print('恭喜答對！')
+
+```
+*課程後公佈*
+{% comment %} 
+{% endcomment %}
+
+    </textarea>
+  </section>
 </section>
 
 <section>
   <section data-markdown>
     <textarea data-template>
 ### `pass`, `continue`, `break` 
-把人名改成中二的暱稱
+<i class="fas fa-caret-right"></i> *取個中二暱稱吧！*
 ```python
 people = ['昱翔', '阿吉', '舒凱', '琼玉', '智堯', '大成']
 template = '【卐乂Oo煞气ㄟ{name}oO乂卍】' 
@@ -218,7 +398,7 @@ for name in people:
   </section>
   <section data-markdown>
     <textarea data-template>
-暴力破解密碼
+<i class="fas fa-caret-right"></i> *暴力破解密碼*
 
 ```python
 from datetime import datetime
@@ -245,18 +425,47 @@ else:
 ```
     </textarea>
   </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 練習
+
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 參考答案
+
+*課程後公佈*
+{% comment %} 
+{% endcomment %}
+
+    </textarea>
+  </section>
 </section>
 
 <section>
   <section data-markdown>
     <textarea data-template>
 ### Comprehensions
-
+<i class="fas fa-caret-right"></i> *本次修課同學*
 ```python
-members = [['國企系', 'Lisa'], ['經濟系', '志浩'], ['外文系', '若昀'], ['外文系', '圓滿'], ['經濟系', '世明'], ['圖資系', '蔡伯'], ['外文系', '以晴'], ['圖資系', '小香'], ['圖資系', '英俊'], ['國企系', 'Ella'], ['歷史系', '珍珍'], ['社會系', '大周'], ['社會系', '米珍'], ['經濟系', '阿青'], ['政治系', '阿隆'], ['經濟系', '麒麟'], ['外文系', '子成'], ['社會系', '淑芳'], ['外文系', '無限'], ['經濟系', '海平'], ['社會系', '莎莎'], ['經濟系', '偉光'], ['歷史系', '韋如'], ['外文系', '玫心']]
+members = [
+    ['國企系', 'Lisa'], ['經濟系', '志浩'], ['外文系', '若昀'],
+    ['外文系', '圓滿'], ['經濟系', '世明'], ['圖資系', '蔡伯'],
+    ['外文系', '以晴'], ['圖資系', '小香'], ['圖資系', '英俊'],
+    ['國企系', 'Ella'], ['歷史系', '珍珍'], ['社會系', '大周'],
+    ['社會系', '米珍'], ['經濟系', '阿青'], ['政治系', '阿隆'],
+    ['經濟系', '麒麟'], ['外文系', '子成'], ['社會系', '淑芳'],
+    ['外文系', '無限'], ['經濟系', '海平'], ['社會系', '莎莎'],
+    ['經濟系', '偉光'], ['歷史系', '韋如'], ['外文系', '玫心'],
+]
 ```
-
-`list` comprehension
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+#### `list` comprehension
+<i class="fas fa-caret-right"></i> *找出所有修課同學*
 ```python
 people = [name for (department, name) in members]
 ```
@@ -271,7 +480,8 @@ for (department, name) in members:
   </section>
   <section data-markdown>
     <textarea data-template>
-`dict` comprehension
+#### `dict` comprehension
+<i class="fas fa-caret-right"></i> *找出所有修課同學與其系所*
 ```python
 people = {name: department for (department, name) in members} 
 ```
@@ -286,7 +496,8 @@ for (department, name) in members:
   </section>
   <section data-markdown>
     <textarea data-template>
-`set` comprehension
+#### `set` comprehension
+<i class="fas fa-caret-right"></i> *找出所有修課同學的系所*
 ```python
 departments = {department for (department, name) in members}
 ```
@@ -297,6 +508,22 @@ departments = set()
 for (department, name) in members:
     departments.add(department)
 ```
+
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 練習
+
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 參考答案
+
+*課程後公佈*
+{% comment %} 
+{% endcomment %}
 
     </textarea>
   </section>
