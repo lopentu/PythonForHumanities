@@ -96,30 +96,37 @@ else:
 
 1. 請寫出 **工程師** 的邏輯式
 2. 請寫出 **老婆** 的邏輯式
+
+```python
+# 可能用到的變數
+watermelon = 0
+baozi = 0
+saw_watermelon_vendor = True
+```
     </textarea>
   </section>
   <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
     <textarea data-template>
 ### 參考答案
 
+*課程後公佈*
+{% comment %} 
 ```python
 # 工程師
 baozi = 0
-if vendor == '西瓜':
+saw_watermelon_vendor == True
+if saw_watermelon_vendor:
     baozi += 1
 else:
     baozi += 10
 
 # 老婆
-baozi = 0
+baozi = 10
 watermelon = 0
-if vendor == '西瓜':
+saw_watermelon_vendor == True
+if saw_watermelon_vendor:
     watermelon = 1
-else:
-    baozi = 10
 ```
-*課程後公佈*
-{% comment %} 
 {% endcomment %}
 
     </textarea>
@@ -194,6 +201,8 @@ profile = {
     <textarea data-template>
 ### 參考答案
 
+*課程後公佈*
+{% comment %} 
 1 會議費用1,000元，學生打八折，台大學生打五折
 
 ```python
@@ -211,15 +220,12 @@ else:
 
 ```python
 price = 1000
-if profile['occupation'] == 'sutdent':
-    price *= 0.5
-if profile['university'] == 'NTU':
+if profile['occupation'] == 'student':
     price *= 0.8
+if profile['university'] == 'NTU':
+    price *= 0.5
 ```
-*課程後公佈*
-{% comment %} 
 {% endcomment %}
-
     </textarea>
   </section>
 </section>
@@ -250,6 +256,16 @@ for i in range(5):
 ### 練習
 
 1. 用兩個迴圈輸出九九乘法表
+```text
+1 x 1 = 1
+1 x 2 = 2
+...
+5 x 5 = 25
+5 x 6 = 30
+...
+9 x 8 = 72
+9 x 9 = 81
+```
 2. 以下為某班成績，請把每個人的分數乘以1.5後，再加上20分，最後在四捨五入至整數，超過100分以100分計
 ```python
 records = [22, 59, 89, 48, 65, 38, 71, 65, 49, 92]
@@ -260,6 +276,8 @@ records = [22, 59, 89, 48, 65, 38, 71, 65, 49, 92]
     <textarea data-template>
 ### 參考答案
 
+*課程後公佈*
+{% comment %} 
 九九乘法表
 ```python
 for i in range(1, 10):
@@ -276,10 +294,7 @@ for i in records:
        res = 100
    new_records.append(res)
 ```
-*課程後公佈*
-{% comment %} 
 {% endcomment %}
-
     </textarea>
   </section>
 </section>
@@ -319,17 +334,15 @@ while True:
     <textarea data-template>
 ### 參考答案
 
+*課程後公佈*
+{% comment %} 
 ```python
 while True:
     statement = input('>>> ')
     result = eval(statement)
     print(result)
 ```
-
-*課程後公佈*
-{% comment %} 
 {% endcomment %}
-
     </textarea>
   </section>
 </section>
@@ -342,23 +355,42 @@ while True:
 ```python
 people = ['昱翔', '阿吉', '舒凱', '琼玉', '智堯', '大成']
 template = '【卐乂Oo煞气ㄟ{name}oO乂卍】' 
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+pass
 
-# pass
+```python
 for name in people:
     if name == '舒凱':
         pass
     else:
         print(template.format(name=name))
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+continue
 
-# continue
+```python
 for name in people:
     if name == '舒凱':
         continue
     else:
         print(template.format(name=name))
     print('-' * 40)  # 分隔線
+```
+    </textarea>
+  </section>
 
-# break
+  <section data-markdown>
+    <textarea data-template>
+break
+
+```python
 for name in people:
     if name == '舒凱':
         break
@@ -391,7 +423,7 @@ while datetime.now().second != 59:
         continue
     else:
         left = 60 - datetime.now().second
-        print(f'(剩餘秒數:{left}) 破解中: {guess}', end='\r')
+        print(f'(剩餘秒數:{str(left).zfill(2)}) 破解中: {guess}', end='\r')
         counter += 1
 else:
      print('無法破解密碼')
@@ -418,6 +450,8 @@ max = 100
     <textarea data-template>
 ### 參考答案
 
+*課程後公佈*
+{% comment %} 
 ```python
 import random
 ans = random.choice(range(1, 101))
@@ -442,10 +476,7 @@ while True:
         print('恭喜答對！')
         break
 ```
-*課程後公佈*
-{% comment %} 
 {% endcomment %}
-
     </textarea>
   </section>
 </section>
