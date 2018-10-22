@@ -312,12 +312,7 @@ while True:
     <textarea data-template>
 ### 練習
 
-終極密碼戰：答案為1-100中的其中一個數字
-
-```python
-import random
-ans = random.choice(range(101))
-```
+用 `whlie` `eval` `input` 土炮一個計算機 (REPL)
     </textarea>
   </section>
   <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
@@ -325,34 +320,12 @@ ans = random.choice(range(101))
 ### 參考答案
 
 ```python
-import random
-ans = random.choice(range(1, 101))
-
-guess = None
-min = 0
-max = 100
-
-while guess != ans:
-    try:
-        guess = input('你猜的數字是： ')
-        guess = int(guess)
-        if guess > max or guess < min:
-            print(f'請輸入介於{min}到{max}之間的數字')
-            continue
-        if guess > ans:
-            max = guess
-        elif guess < ans:
-            min = guess
-        print(f'答案在{min}到{max}之間')
-    except KeyboardInterrupt:
-        print('使用者中斷')
-        break
-    finally:
-        print('遊戲終止')
-else:
-    print('恭喜答對！')
-
+while True:
+    statement = input('>>> ')
+    result = eval(statement)
+    print(result)
 ```
+
 *課程後公佈*
 {% comment %} 
 {% endcomment %}
@@ -429,12 +402,46 @@ else:
     <textarea data-template>
 ### 練習
 
+終極密碼戰：答案為1-100中的其中一個數字
+
+```python
+import random
+ans = random.choice(range(1, 101))
+
+guess = None
+min = 0
+max = 100
+```
     </textarea>
   </section>
   <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
     <textarea data-template>
 ### 參考答案
 
+```python
+import random
+ans = random.choice(range(1, 101))
+
+guess = None
+min = 0
+max = 100
+
+while True:
+    guess = input('你猜的數字是： ')
+    guess = int(guess)
+    if guess > max or guess < min:
+        print(f'請輸入介於{min}到{max}之間的數字')
+        continue
+    if guess > ans:
+        max = guess
+        print(f'答案在{min}到{max}之間')
+    elif guess < ans:
+        min = guess
+        print(f'答案在{min}到{max}之間')
+    else:
+        print('恭喜答對！')
+        break
+```
 *課程後公佈*
 {% comment %} 
 {% endcomment %}
@@ -515,11 +522,19 @@ for (department, name) in members:
     <textarea data-template>
 ### 練習
 
+找出所有 **外文系** 同學的名字
     </textarea>
   </section>
   <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
     <textarea data-template>
 ### 參考答案
+
+```python
+people = [name for (department, name) in members if department == '外文系']
+
+# 或
+people = [i[1] for i in members if i[0] == '外文系']
+```
 
 *課程後公佈*
 {% comment %} 
