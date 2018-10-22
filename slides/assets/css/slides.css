@@ -15,3 +15,33 @@
 img {
   width: 60%;
 }
+
+.line {
+  display: block;
+}
+.line.focus {
+  background: rgba(255, 255, 0, 0.4);
+  border-radius: 3px;
+}
+
+
+section[data-lineno] pre {
+  counter-increment: listing 0;
+}
+section[data-lineno] pre > code > .line:before {
+  counter-increment: listing;
+  content: counter(listing, decimal-leading-zero);
+  color: rgba(182, 182, 182, 0.4);
+  display: inline-block;
+  width: 2em;
+  padding-left: 0;
+  margin-left: 0;
+  text-align: left;
+}
+.fragment.current-visible.visible:not(.current-fragment) {
+  display: none;
+  height:0px;
+  line-height: 0px;
+  font-size: 0px;
+}
+
