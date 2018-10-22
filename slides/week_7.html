@@ -38,7 +38,7 @@ title: 流程控制
 
     </textarea>
   </section>
-  <section data-markdown>
+  <section data-markdown data-lineno>
     <textarea data-template>
 ```python
 male = input('帥哥/醜男/宅男： ')
@@ -61,7 +61,7 @@ elif action == '開黃腔':
 ``` 
     </textarea>
   </section>
-  <section data-markdown>
+  <section data-markdown data-lineno>
     <textarea data-template>
 或者可以這樣表示
 ```python
@@ -232,7 +232,7 @@ if profile['university'] == 'NTU':
 
 <section>
   <section data-markdown>
-    <textarea data-template>
+    <textarea data-template data-lineno>
 ### `for`
 <i class="fas fa-caret-right"></i> *不知道中午要吃什麼？*
 ```python
@@ -383,6 +383,8 @@ for name in people:
         print(template.format(name=name))
     print('-' * 40)  # 分隔線
 ```
+
+改成 pass 會發生什麼事情？ <!-- .elements class="fragment" data-code-focus="3" -->
     </textarea>
   </section>
 
@@ -401,33 +403,90 @@ for name in people:
 ```
     </textarea>
   </section>
-  <section data-markdown>
+  <section data-markdown data-lineno>
     <textarea data-template>
 <i class="fas fa-caret-right"></i> *暴力破解密碼*
-
+0. 密碼為0-9的四位數組合
+0. 每次輸入時間間隔至少為0.1 秒
+0. 每錯5次就得等待5秒
+0. 只有一分鐘的時間可以破解
+    </textarea>
+  </section>
+  <section data-markdown data-lineno>
+    <textarea data-template>
 ```python
 from datetime import datetime
-import random
+from random import shuffle
+from time import sleep
+from itertools import permutations
 
-passcode = 9527  # 密碼
-counter = 0  # 計數器
-while datetime.now().second != 59:
-    comb = list(range(10000))
-    random.shuffle(comb)
-    guess = comb.pop()
-    if guess == passcode:
-        print('The passcode is', guess)
-        print(f'attempts: {counter}')
-        break
-    if datetime.now().second % 2 == 0:
+password = '9527'
+counter = 0
+combs = list(permutations(range(10), 4))
+shuffle(combs)
+start_time = datetime.now()
+
+while guess != password and\
+      (datetime.now() - start_time).seconds <= 60:
+    comb = combs.pop()
+    guess = ''
+    for digit in comb:
+        guess += str(digit)
+    if counter == 20:
+        print('連續猜錯20次，等待五秒...')
+        sleep(5)
+        counter = 0
         continue
+    if guess == password:
+        print(f'密碼為{guess}')
+        break
     else:
-        left = 60 - datetime.now().second
-        print(f'(剩餘秒數:{str(left).zfill(2)}) 破解中: {guess}', end='\r')
-        counter += 1
+        pass
+    print(guess)
+    counter += 1
+    sleep(0.1)
 else:
-     print('無法破解密碼')
+    print('無法破解密碼')
+
 ```
+
+import 內建模組 <!-- .elements class="fragment current-visible" data-code-focus="1-4" -->
+
+假設密碼為 9527 <!-- .elements class="fragment current-visible" data-code-focus="6" -->
+
+紀錄已嘗試的次數 <!-- .elements class="fragment current-visible" data-code-focus="7" -->
+
+0-9之四位組合 <!-- .elements class="fragment current-visible" data-code-focus="8" -->
+
+隨機打亂排序 <!-- .elements class="fragment current-visible" data-code-focus="9" -->
+
+開始時間 <!-- .elements class="fragment current-visible" data-code-focus="10" -->
+
+如果猜測數字不等於答案，而且 <!-- .elements class="fragment current-visible" data-code-focus="12" -->
+
+執行時間未滿60秒 <!-- .elements class="fragment current-visible" data-code-focus="13" -->
+
+抽出最後一個數字當作猜測對象 <!-- .elements class="fragment current-visible" data-code-focus="14" -->
+
+組成四位的字串 <!-- .elements class="fragment current-visible" data-code-focus="15-17" -->
+
+如果連續錯誤20次 <!-- .elements class="fragment current-visible" data-code-focus="18" -->
+
+等待五秒 <!-- .elements class="fragment current-visible" data-code-focus="20" -->
+
+計數器歸0 <!-- .elements class="fragment current-visible" data-code-focus="21" -->
+
+重新執行迴圈 <!-- .elements class="fragment current-visible" data-code-focus="22" -->
+
+如果猜測數字等於答案 <!-- .elements class="fragment current-visible" data-code-focus="23" -->
+
+跳出迴圈 <!-- .elements class="fragment current-visible" data-code-focus="25" -->
+
+不做任何事情 <!-- .elements class="fragment current-visible" data-code-focus="26-27" -->
+
+顯示猜測數字，計數器加1，等待0.1秒 <!-- .elements class="fragment current-visible" data-code-focus="28-30" -->
+
+如果如果迴圈沒有跳出且條件不再符合，則執行此處 <!-- .elements class="fragment current-visible" data-code-focus="31-32" -->
     </textarea>
   </section>
   <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
@@ -437,6 +496,7 @@ else:
 終極密碼戰：答案為1-100中的其中一個數字
 
 ```python
+# 可能用到的參數
 import random
 ans = random.choice(range(1, 101))
 
@@ -560,17 +620,15 @@ for (department, name) in members:
     <textarea data-template>
 ### 參考答案
 
+*課程後公佈*
+{% comment %} 
 ```python
 people = [name for (department, name) in members if department == '外文系']
 
 # 或
 people = [i[1] for i in members if i[0] == '外文系']
-```
 
-*課程後公佈*
-{% comment %} 
 {% endcomment %}
-
     </textarea>
   </section>
 </section>
