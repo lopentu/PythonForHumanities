@@ -2,7 +2,25 @@
 layout: slide_pfh
 permalink: PythonForHumanities/slides/week7
 title: 流程控制 
+index_background: https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif
 ---
+
+<section>
+  <section data-background-transition="zoom" data-background="#b5533c" data-markdown>
+    <textarea data-template>
+一個良好的工程師需要具備怎樣的心態？
+    </textarea>
+  </section>
+  <section data-background="./assets/img/week7/healthy-developer.jpg">
+  </section>
+  <section data-background-transition="zoom" data-background="#b5533c" data-markdown>
+    <textarea data-template>
+一個良好的工程師有哪些必讀書籍？
+    </textarea>
+  </section>
+  <section data-background="./assets/img/week7/readings.jpg" data-background-size="30%">
+  </section>
+</section>
 
 <section>
   <section data-background-transition="zoom" data-background="#b5533c" data-markdown>
@@ -105,12 +123,10 @@ saw_watermelon_vendor = True
 ```
     </textarea>
   </section>
-  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown data-lineno>
     <textarea data-template>
 ### 參考答案
 
-*課程後公佈*
-{% comment %} 
 ```python
 # 工程師
 baozi = 0
@@ -127,8 +143,6 @@ saw_watermelon_vendor == True
 if saw_watermelon_vendor:
     watermelon = 1
 ```
-{% endcomment %}
-
     </textarea>
   </section>
 </section>
@@ -197,12 +211,9 @@ profile = {
 ```
     </textarea>
   </section>
-  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown data-lineno>
     <textarea data-template>
 ### 參考答案
-
-*課程後公佈*
-{% comment %} 
 1 會議費用1,000元，學生打八折，台大學生打五折
 
 ```python
@@ -225,7 +236,6 @@ if profile['occupation'] == 'student':
 if profile['university'] == 'NTU':
     price *= 0.5
 ```
-{% endcomment %}
     </textarea>
   </section>
 </section>
@@ -276,8 +286,6 @@ records = [22, 59, 89, 48, 65, 38, 71, 65, 49, 92]
     <textarea data-template>
 ### 參考答案
 
-*課程後公佈*
-{% comment %} 
 九九乘法表
 ```python
 for i in range(1, 10):
@@ -294,7 +302,6 @@ for i in records:
        res = 100
    new_records.append(res)
 ```
-{% endcomment %}
     </textarea>
   </section>
 </section>
@@ -334,15 +341,12 @@ while True:
     <textarea data-template>
 ### 參考答案
 
-*課程後公佈*
-{% comment %} 
 ```python
 while True:
     statement = input('>>> ')
     result = eval(statement)
     print(result)
 ```
-{% endcomment %}
     </textarea>
   </section>
 </section>
@@ -506,12 +510,10 @@ max = 100
 ```
     </textarea>
   </section>
-  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown data-lineno>
     <textarea data-template>
 ### 參考答案
 
-*課程後公佈*
-{% comment %} 
 ```python
 import random
 ans = random.choice(range(1, 101))
@@ -536,7 +538,6 @@ while True:
         print('恭喜答對！')
         break
 ```
-{% endcomment %}
     </textarea>
   </section>
 </section>
@@ -620,15 +621,12 @@ for (department, name) in members:
     <textarea data-template>
 ### 參考答案
 
-*課程後公佈*
-{% comment %} 
 ```python
 people = [name for (department, name) in members if department == '外文系']
 
 # 或
 people = [i[1] for i in members if i[0] == '外文系']
-
-{% endcomment %}
+```
     </textarea>
   </section>
 </section>
@@ -641,3 +639,10 @@ people = [i[1] for i in members if i[0] == '外文系']
   </textarea>
 </section>
 
+<section data-markdown>
+  <textarea data-template>
+靠北工程師
+
+![joke1](./assets/img/week7/joke1.png)
+  </textarea>
+</section>
