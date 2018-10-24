@@ -2,7 +2,6 @@
 layout: slide_pfh
 permalink: PythonForHumanities/slides/week7
 title: 流程控制 
-index_background: https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif
 ---
 
 <section>
@@ -130,7 +129,7 @@ saw_watermelon_vendor = True
 ```python
 # 工程師
 baozi = 0
-saw_watermelon_vendor == True
+saw_watermelon_vendor = True
 if saw_watermelon_vendor:
     baozi += 1
 else:
@@ -286,6 +285,8 @@ records = [22, 59, 89, 48, 65, 38, 71, 65, 49, 92]
     <textarea data-template>
 ### 參考答案
 
+(兩位厲害同學的答案，我會再補上～)
+
 九九乘法表
 ```python
 for i in range(1, 10):
@@ -334,7 +335,7 @@ while True:
     <textarea data-template>
 ### 練習
 
-用 `whlie` `eval` `input` 土炮一個計算機 (REPL)
+用 `while` `eval` `input` 土炮一個計算機 (REPL)
     </textarea>
   </section>
   <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
@@ -513,7 +514,9 @@ max = 100
   <section data-background-transition="zoom" data-background="#2C3539" data-markdown data-lineno>
     <textarea data-template>
 ### 參考答案
+下次公布
 
+{% comment %}
 ```python
 import random
 ans = random.choice(range(1, 101))
@@ -538,6 +541,7 @@ while True:
         print('恭喜答對！')
         break
 ```
+{% endcomment %}
     </textarea>
   </section>
 </section>
@@ -621,12 +625,15 @@ for (department, name) in members:
     <textarea data-template>
 ### 參考答案
 
+下次公布
+{% comment %}
 ```python
 people = [name for (department, name) in members if department == '外文系']
 
 # 或
 people = [i[1] for i in members if i[0] == '外文系']
 ```
+{% endcomment %}
     </textarea>
   </section>
 </section>
@@ -636,13 +643,5 @@ people = [i[1] for i in members if i[0] == '外文系']
 ### 補充： `try`, `except`, `raise`
 
 <i class="fas fa-exclamation-circle"></i> [參考文件](https://docs.python.org/3/tutorial/errors.html)
-  </textarea>
-</section>
-
-<section data-markdown>
-  <textarea data-template>
-靠北工程師
-
-![joke1](./assets/img/week7/joke1.png)
   </textarea>
 </section>
