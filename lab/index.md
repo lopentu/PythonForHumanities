@@ -17,12 +17,12 @@ Lab Session
 | 4.  | 10/03|  規則：語法結構（條件式、對應表）          |  [🔗][w4]  |
 | 5.  | 10/10|  （國慶日）                            |
 | 6.  | 10/17|  功能：操作資料結構（資料結構方法）        |  [🔗][w6]  |
-| 7.  | 10/24|  重複：程式流程控制（迴圈）               |
+| 7.  | 10/24|  迭代：程式流程控制（迴圈）               |  [🔗][w7]  |
 | 8.  | 10/31|  分工：程式組織（函數定義、呼叫、分工）     |
-| 9.  | 11/07|  （暫訂）概念：程式架構（類別與物件）      |
+| 9.  | 11/07|  文字：字串處理                         |
 | 10.  | 11/14|  （期中考）                            |
-| 11.  | 11/21|  （暫訂）組織：程式架構（模組與套件）              |
-| 12.  | 11/28|  （暫訂）文字：字串處理（字串函數、表情符號、剖析字串） |
+| 11.  | 11/21|  （暫訂）概念：程式架構（類別與物件）      |
+| 12.  | 11/28|  （暫訂）組織：程式架構（模組與套件）      |
 | 13.  | 12/05|  （暫訂）框架：字串處理（正規表達式）              |
 | 14.  | 12/12|  （暫訂）田野：外部資料（Web API endpoint）      |
 | 15.  | 12/19|  （暫訂）分析：表格式資料（計算、操作、呈現）        |
@@ -34,6 +34,8 @@ Lab Session
 [w3]:https://docs.google.com/presentation/d/1tC5rDWTjwftrwuXJux0ydRgz2eICsUnlRWPdBcZRgSU/edit?usp=sharing
 [w4]:https://docs.google.com/presentation/d/1ViWN7nhabkomNc508C1Am0Lz-FiaaRX2nps67Fi2kjI/edit?usp=sharing
 [w6]:https://drive.google.com/open?id=1l5z3erlN0U4rNj2oVDFROrwJ35u79W-ct7bChKDtxOs
+[w7]:https://docs.google.com/presentation/d/1KClaEANP1yRj63LpE-pUds-wvvOydAlEI1qlrBwwqus/edit?usp=sharing
+
 Python 作為人文學群的程式語言
 -------------------------
 「學程式」是全民運動：十二年國教科技領域課綱草案也預定將程式列為必修，甚至下伸至國中；坊間的職業訓練課程也教程式，幾乎是就業保證；大眾媒體亦報導眾多「非本科」學生因興趣自學程式，而進入相關產業獲得優渥待遇。的確，寫程式的前景大好，在機器學習、深度學習、資料科學當紅的時代，能夠寫程式好像變成基本能力。
