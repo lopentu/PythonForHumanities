@@ -32,7 +32,7 @@ title: 函式與模組
 |`float()` |`len()  ` | `round()`  | `tuple()` |
 |`hash() ` |`list() ` | `set()  `  | `type() ` |
 
-[<i class="fas fa-exclamation-circle"></i> 完整內建函數請點此](https://docs.python.org/3/library/functions.html)
+[<i class="fas fa-exclamation-circle"></i> 完整內建函式請點此](https://docs.python.org/3/library/functions.html)
     </textarea>
   </section>
   <section data-markdown>
@@ -43,7 +43,6 @@ title: 函式與模組
 
 ```python
 def function_name(argument1, argument2):
-    """Docstring."""
     return expression
 ```
 
@@ -59,7 +58,6 @@ function_name()
 <i class="fas fa-exclamation-triangle"></i> 注意
 
 + 函式首字請用**小寫**
-+ **Docstring** (說明文字) 是非必要的
 + 冒號 `:` 下一行要記得**空四格**
 + 沒有 `return` 的話，一律回傳 `None`
 + 參數數量沒有限制，也可以不帶參數
@@ -69,36 +67,109 @@ function_name()
   <section data-markdown>
     <textarea data-template>
 不帶參數
+
+<i class="fas fa-caret-right"></i> *顯示當前時間* 
+```python
+from datetime import datetime
+
+def show_time():
+    current_time = datetime.now()
+    return current_time
+```
     </textarea>
   </section>
   <section data-markdown>
     <textarea data-template>
 帶參數
+
+<i class="fas fa-caret-right"></i> *是否顯示日期* 
+```python
+def show_time(fmt):
+    current_time = datetime.now()
+    if fmt == 'date':
+        output = current_time.strftime('%H:%M:%S') 
+    elif fmt == 'datetime':
+        output = current_time.strftime('%Y-%m-%d %H:%M:%S') 
+    return output 
+```
     </textarea>
   </section>
   <section data-markdown>
     <textarea data-template>
 預設參數
-    </textarea>
-  </section>
-  <section data-markdown>
-    <textarea data-template>
-不使用 `return` 的情境
+
+<i class="fas fa-caret-right"></i> *預設顯示日期及24時制* 
+
+```python
+def show_time(fmt='datetime', convention=24):
+    current_time = datetime.now()
+    if fmt == 'date':
+        if convention == 12:
+            output = current_time.strftime('%I:%M:%S %p') 
+        elif convention == 24:
+            output = current_time.strftime('%H:%M:%S') 
+    elif fmt == 'datetime':
+        if convention == 12:
+            output = current_time.strftime('%Y-%m-%d %I:%M:%S %p') 
+        elif convention == 24:
+            output = current_time.strftime('%Y-%m-%d %H:%M:%S') 
+    return output 
+```
     </textarea>
   </section>
   <section data-markdown>
     <textarea data-template>
 必備參數 選擇性參數
+
+<i class="fas fa-caret-right"></i> *預設顯示24時制* 
+
+```python
+def show_time(fmt, convention=24):
+    current_time = datetime.now()
+    if fmt == 'date':
+        if convention == 12:
+            output = current_time.strftime('%I:%M:%S %p') 
+        elif convention == 24:
+            output = current_time.strftime('%H:%M:%S') 
+    elif fmt == 'datetime':
+        if convention == 12:
+            output = current_time.strftime('%Y-%m-%d %I:%M:%S %p') 
+        elif convention == 24:
+            output = current_time.strftime('%Y-%m-%d %H:%M:%S') 
+    return output 
+```
     </textarea>
   </section>
   <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
     <textarea data-template>
 ### 補充： `lambda`
+
+<i class="fas fa-exclamation-circle"></i> [參考文件](https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions)
+
+下列函示
+```python 
+def foo(a, b):
+    return a + b
+```
+等價於
+```python
+foo = lambda a, b: a + b
+```
     </textarea>
   </section>
-  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
     <textarea data-template>
-### 練習
+更多排序
+
+```python
+people = ['Shukai', 'Aji', 'Sean', 'Richard', 'Chihyao', 'Joy']
+
+# 按照名字長短排序
+people.sort(key=lambda x: len(x))
+
+# 按照名字的最後一個字母排序
+people.sort(key=lambda x: x[-1])
+```
     </textarea>
   </section>
 </section>
@@ -107,6 +178,26 @@ function_name()
   <section data-markdown>
     <textarea data-template>
 ## Module (模組)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 內建模組
+
+以下是已提過的內建模組
+
+|           |          |
+| ----------| -------- |
+|`time`     |`random`  |
+|`datetime` |`math  `  |
+
+[<i class="fas fa-exclamation-circle"></i> 完整內建模組請點此](https://docs.python.org/3/py-modindex.html)
+
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 語法
 
 ```python
 import module
@@ -117,40 +208,71 @@ from module import function
 ```
 
 ```python
+from module import *
+```
+
+```python
 from module import function as alias
 ```
     </textarea>
   </section>
   <section data-markdown>
     <textarea data-template>
-### 目的
-    </textarea>
-  </section>
-  <section data-markdown>
-    <textarea data-template>
-### 內建模組
-    </textarea>
-  </section>
-  <section data-markdown>
-    <textarea data-template>
-    </textarea>
-  </section>
-  <section data-markdown>
-    <textarea data-template>
-### 語法
+### 結構
+
+```text
+PythonForHumanities
+├── hello.py
+└── main.py
+```
+
+`hello.py`
+```python
+def greeting():
+    print("Hello, 世界")
+```
+
+`main.py`
+```python
+from hello import greeting
+
+greeting()
+```
     </textarea>
   </section>
   <section data-markdown>
     <textarea data-template>
 <i class="fas fa-exclamation-triangle"></i> 注意
 
-+ 避免 **circular imports**
-+ 避免汙染命名空間
++ `import` 的時候不會有副檔名(`.py`)
++ 不要使用[內建模組](https://docs.python.org/3/py-modindex.html)名稱命名 
     </textarea>
   </section>
   <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
     <textarea data-template>
 ### 練習
+
+請設計一個模組，其中某個函式的作用為：  
+把 **大寫字串轉成小寫** 及 **小寫字串轉成大寫**
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 參考答案
+
+課程後公布
+
+`func.py`
+```python
+def toggle_case(string):
+    if string.isupper():
+        output = string.lower()
+    elif string.lower():
+        output = string.upper()
+    else:
+        output = string
+    return output
+```
     </textarea>
   </section>
 </section>
