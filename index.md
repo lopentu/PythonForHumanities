@@ -31,7 +31,7 @@ repository_url: https://github.com/lopentu/PythonForHumanities
 |   5    |  10/10   |國慶日放假                                    |           |
 |   6    |  10/17   |資料型態應用                                  |  [🔗][s6] |
 |   7    |  10/24   |流程控制                                      |  [🔗][s7] |
-|   8    |  10/31   |函式與模組                                    |           |
+|   8    |  10/31   |函式與模組                                    |  [🔗][s8] |
 |   9    |  11/07   |字串處理與正規表示法                          |           |
 |   10   |  11/14   |期中考                                        |           |
 |   11   |  11/21   |正規表示法應用                                |           |
@@ -49,6 +49,7 @@ repository_url: https://github.com/lopentu/PythonForHumanities
 [s4]: ./slides/week4.html
 [s6]: ./slides/week6.html
 [s7]: ./slides/week7.html
+[s8]: ./slides/week8.html
 [w2]: {% post_url PythonForHumanities/2018-09-19-環境建置與編輯器安裝 %}
 [w3]: {% post_url PythonForHumanities/2018-09-26-程式編寫與執行基本概念 %}
 [w4]: {% post_url PythonForHumanities/2018-10-03-資料型態介紹 %}
