@@ -33,6 +33,9 @@ event_info = {
 ##   Function Definition
 ## -----------------------
 def group_last_time(ev_data, ev_info):
+    ## [Optional] 為了讓我們理解「傳進」函數的引數是什麼，你可以選擇用debugger看
+    ## ev_data或ev_info的內容，或直接用print把這兩個變項印出來。
+    
     ltime_dict = {}
     for ev_x in ev_data:
 
@@ -41,8 +44,9 @@ def group_last_time(ev_data, ev_info):
 
         ## [Hint]: 從ltime_dict.get方法，從dict中取出目前ev_category變項
         ## 內容所儲存的內容，並把該內容指派給ltime_day。
-        ## 如果ltime_dict裡還沒有ev_category所對應的內容，那就用預設值用36500（天）
-        ## 當作預設值。這樣的用意是讓接下來取最小值時，這個預設（初始）值很容易被取代。
+        ## 如果ltime_dict裡還沒有ev_category所對應的內容，那就用36500（天）
+        ## 當作預設值。這樣的用意是讓接下來取最小值時，這個預設（初始）值很容易被
+        ## 真實資料所取代。
         ltime_day = ltime_dict.get(, 36500)
 
         ## [Hint]: 請在這一行把字串剖析成日期(datetime)物件
@@ -58,7 +62,7 @@ def group_last_time(ev_data, ev_info):
         ## 以天數表達這個時間差異。
         ## 我們希望找出距離現在最近的日期，當作最近一次活動距離現在的天數，
         ## 也就是我們要找出最小的date_diff.days。
-        ## 你可能可以用條件式，或用min函數比較ltime_day和date_diff.days完成這件事情，
+        ## 你可能可以用條件式，或用min函數比較ltime_day和date_diff.days完成這個目的。
         ltime_min = 
         
         ## [Hint] 最後把ltime_min寫回ltime_dict物件，請填寫要寫入ltime_dict的鍵（key） 
