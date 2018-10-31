@@ -516,7 +516,6 @@ max = 100
 ### 參考答案
 下次公布
 
-{% comment %}
 ```python
 import random
 ans = random.choice(range(1, 101))
@@ -541,7 +540,6 @@ while True:
         print('恭喜答對！')
         break
 ```
-{% endcomment %}
     </textarea>
   </section>
 </section>
@@ -626,14 +624,12 @@ for (department, name) in members:
 ### 參考答案
 
 下次公布
-{% comment %}
 ```python
 people = [name for (department, name) in members if department == '外文系']
 
 # 或
 people = [i[1] for i in members if i[0] == '外文系']
 ```
-{% endcomment %}
     </textarea>
   </section>
 </section>
