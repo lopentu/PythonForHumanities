@@ -33,32 +33,40 @@ event_info = {
 ##   Function Definition
 ## -----------------------
 def group_last_time(ev_data, ev_info):
+    ## [Optional] 為了讓我們理解「傳進」函數的引數是什麼，你可以選擇用debugger看
+    ## ev_data或ev_info的內容，或直接用print把這兩個變項印出來。
+    
     ltime_dict = {}
     for ev_x in ev_data:
 
-        ## 請在ev_x裡找出代表類別的元素，例如「7-11」、「總圖」、「捷運」這些事件。
+        ## 請在ev_x（資料型別是tuple）裡找出代表類別的元素，例如「7-11」、「總圖」、「捷運」這些類別。
         ev_category = 
 
         ## [Hint]: 從ltime_dict.get方法，從dict中取出目前ev_category變項
         ## 內容所儲存的內容，並把該內容指派給ltime_day。
-        ## 如果ltime_dict裡還沒有ev_category所對應的內容，那就用預設值用36500（天）
-        ## 當作預設值。這樣的用意是讓接下來取最小值時，這個預設（初始）值很容易被取代。
+        ## 如果ltime_dict裡還沒有ev_category所對應的內容，那就用36500（天）
+        ## 當作預設值。這樣的用意是讓接下來取最小值時，這個預設（初始）值很容易被
+        ## 實際資料所取代。        
         ltime_day = ltime_dict.get(, 36500)
 
         ## [Hint]: 請在這一行把字串剖析成日期(datetime)物件
         ## 在這個檔案一開始已經幫同學做好引入，也就是第一行的
         ## `from datetime import datetime`
-        ## 請找出如何使用datetime.strptime方法（可參考strptime的說明文件） 
+        ## 請找出如何使用datetime.strptime的類別方法（可參考strptime的說明文件） 
+        ## https://docs.python.org/3/library/datetime.html#datetime.datetime.strptime
+        ## 你可能會需要用到的日期格式字串"%Y/%m/%d"
         date_x = 
 
-        ## [Hint]: 用現在時間減掉資料裡的時間`date_x`，date_diff代表「時間的差異」。
+        ## 這行已經完成了。這行的意思是用現在時間減掉這次迭代中，該事件的時間`date_x`，
+        ## date_diff代表「時間的差異」。
         date_diff = datetime.now() - date_x
 
-        ## [Hint] date_diff是「時間的差異」，date_diff.days是
-        ## 以天數表達這個時間差異。
-        ## 我們希望找出距離現在最近的日期，當作最近一次活動距離現在的天數，
-        ## 也就是我們要找出最小的date_diff.days。
-        ## 你可能可以用條件式，或用min函數比較ltime_day和date_diff.days完成這件事情，
+        ## [Hint] date_diff是「時間的差異」，
+        ## date_diff.days（.days是一個「物件屬性」）是以天數表達這個時間差異。
+        ## 我們希望比較ltime_day（在此迭代之前，該活動的最近天數），
+        ## 和date_diff.days（這個迭代中，該活動距離現在的天數），
+        ## 並找出距離最近的天數。
+        ## 你可能可以用條件式，或用min函數直接比較ltime_day和date_diff.days完成這個目的。
         ltime_min = 
         
         ## [Hint] 最後把ltime_min寫回ltime_dict物件，請填寫要寫入ltime_dict的鍵（key） 
