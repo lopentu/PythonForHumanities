@@ -430,6 +430,7 @@ counter = 0
 combs = list(permutations(range(10), 4))
 shuffle(combs)
 start_time = datetime.now()
+guess = ''
 
 while guess != password and\
       (datetime.now() - start_time).seconds <= 60:
