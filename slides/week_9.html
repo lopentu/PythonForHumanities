@@ -1,0 +1,260 @@
+---
+layout: slide_pfh
+permalink: PythonForHumanities/slides/week9
+title: 重要觀念整理 
+---
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+![slido](http://press.sli.do/wp-content/uploads/2014/03/slido-logo-rgb.jpg)
+
+大家都在說些什麼？
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="assets/img/week9/wc.png">
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+莫緊張，莫驚慌
+    </textarea>
+  </section>
+  <section data-markdown data-background="https://www.liverx.net/wp-content/uploads/2015/05/hiccups.jpg" data-background-size="contain"0w>
+    <textarea data-template>
+天啊!
+
+我打了一百個嗝，會不會死掉？！
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+不會 
+    </textarea>
+  </section>
+  <section data-markdown data-background="http://www.xinhuanet.com/science/2016-01/21/135031838_14533596012931n.jpg" data-background-size="contain">
+    <textarea data-template>
+天啊!
+
+我不小心吞了西瓜籽，肚子會不會長出西瓜樹？！
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+不會，謝謝
+    </textarea>
+  </section>
+  <section data-markdown data-background="https://i.imgflip.com/11gzsl.jpg" data-background-size="contain">
+    <textarea data-template>
+天啊!
+
+期中考題目我會不會都看不懂，我是不是完蛋了？！
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+並！不！會！
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+### 什麼時候要回傳(return) 值？
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+原則
++ 資料型態為 Immutable (不可變)，要回傳 (return)
++ 資料型態為 mutable (可變)，__不用__回傳
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### Mutable
+
++ `list` 
++ `dict` 
++ `set`
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+```python
+l1 = [1, 2, 3]
+l2 = l1
+l2.pop()
+l1 == l2
+```
+`True`
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### Immutable
+
++ `int`
++ `float`
++ `str`
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+```python
+n1 = 123
+n2 = n1
+n2 += 456
+n1 == n2
+```
+`False`
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+### <s>程式</s>不足，敗事有餘？
+
+常見錯誤
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#b5533c" data-markdown>
+    <textarea data-template>
+![How to Make Mistakes in Python](https://covers.oreillystatic.com/images/0636920043300/cat.gif)  <!-- .element: style="width:20%" -->
+
+[請自行 Google，可以找到 PDF](http://lmgtfy.com/?q=How+to+Make+Mistakes+in+Python+amazon+aws)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+```python
+pass = 88
+if password == 88:
+    print('Great!')
+else:
+    print('Wrong!')
+```
+`SyntaxError: invalid syntax`
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+```python
+AsH3 = 100
+if AsH3 = 250:
+    print('You are dead!')
+else:
+    pass 
+```
+`SyntaxError: invalid syntax`
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+```python
+dic = {
+    'word': 'Ikea',
+    'pronunciation': '[ɪkɪə]',
+}
+print(dic['pronounciation'])
+```
+`KeyError: 'pronounciation'`
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+```python
+if True:
+    received = True
+else:
+    received = False
+
+print(recieved)
+```
+`NameError: name 'recieved' is not defined`
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+```python
+text = '程式不足，敗事有餘'
+text.replace('程式', '成事')
+```
+`text` 沒有改變？
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+```python
+old_friends = ['老劉', '阿吉', '阿純']
+new_friends = old_friends.append('小睿')
+```
+`new_friends` 為什麼是空的？
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+```python
+profile = {'name': 'Grace', 'age': 18}
+print(profile['name'] + '的年齡是' + profile['age'])
+```
+`TypeError: can only concatenate str (not "int") to str`
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+```python
+name = 'sean'
+
+if name.islower()
+    print(name.upper())
+```
+`SyntaxError: invalid syntax`
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+```python
+def greeting:
+    print('Hello, world!')
+```
+`SyntaxError: invalid syntax`
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+```python
+def goodbye():
+    print('阿吉掰~')
+
+goodbye
+```
+為什麼出現類似 `<function __main__.goodbye()` 的東西？
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+```python
+def average(numbers):
+    summation = sum(numbers)
+    output = summation / len(numbers) 
+
+result = average([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+```
+`result` 是空的啊？
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+```python
+headers = {
+    'User-Agent': 'Mozilla/5.0 Safari/605.1.15'
+    'cookie': '_ga:837102382301123''
+}
+```
+`SyntaxError: invalid syntax`
+    </textarea>
+  </section>
+</section>
