@@ -19,7 +19,7 @@ Lab Session
 | 6.  | 10/17|  功能：操作資料結構（資料結構方法）        |  [🔗][w6]  |
 | 7.  | 10/24|  迭代：程式流程控制（迴圈）               |  [🔗][w7]  |
 | 8.  | 10/31|  分工：程式組織（函數）                  |  [🔗][w8]  |
-| 9.  | 11/07|  （期中考準備）                         |
+| 9.  | 11/07|  （期中考準備）                         |  [🔗][w9]  |
 | 10.  | 11/14|  （期中考）                            |
 | 11.  | 11/21|  （暫訂）概念：程式架構（類別與物件）      |
 | 12.  | 11/28|  （暫訂）組織：程式架構（模組與套件）      |
@@ -36,6 +36,7 @@ Lab Session
 [w6]:https://drive.google.com/open?id=1l5z3erlN0U4rNj2oVDFROrwJ35u79W-ct7bChKDtxOs
 [w7]:https://docs.google.com/presentation/d/1KClaEANP1yRj63LpE-pUds-wvvOydAlEI1qlrBwwqus/edit?usp=sharing
 [w8]:https://docs.google.com/presentation/d/1BqbNGBqXJZSfIgwqNDNDFX_xu5yNtzfVZ7XWjJowJJo/edit?usp=sharing
+[w9]:https://docs.google.com/presentation/d/1GD2MC91HdEs-vKwjL_xY_mdThflVgk5YGsm3Ipj42vM/edit?usp=sharing
 
 Python 作為人文學群的程式語言
 -------------------------
