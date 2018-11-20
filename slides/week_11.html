@@ -31,8 +31,6 @@ title:  正規表示式
 + 正則表達式
 + 正規表示法
 + 正規運算式
-+ 規則運算式
-+ 常規表示法
     </textarea>
   </section>
   <section data-markdown>
@@ -77,10 +75,46 @@ import re
   </section>
   <section data-markdown>
     <textarea data-template>
+|    標記   |       意義        |
+| --------- | ------------------|
+| `.`       | 任意字符          | 
+| `*`       | 0個或多個         | 
+| `+`       | 1個或多個         | 
+| `^`       | 字符開頭          | 
+| `$`       | 字符結尾          | 
+| `{n,m}`   | 重複字符n至m次    | 
+| `[xyz]`   | 一組字符          | 
     </textarea>
   </section>
   <section data-markdown>
     <textarea data-template>
+|    標記   |       意義            |
+| --------- | --------------------- |
+| `\w`      | 等同於 `[a-zA-Z0-9_]` |
+| `\d`      | 等同於 `[0-9]`        |
     </textarea>
   </section>
 </section>
+
+<section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+###  練習
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+找出所有的英文字
+
+> 應該不會這麼多人去買吧，大家都知道salary一直沒有increase可是物價一直increase，我覺得比較是大家concern的東西，如果是吃西餐的話，像三明治加一個burger或什麼都會比這個高價錢，所以我覺得如果它要漲的話，應該會比較受到impact
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+找出所有台大外文的老師姓名
+
+[連結](http://www.forex.ntu.edu.tw/members/teacher.php)
+    </textarea>
+  </section>
+</section>
+
