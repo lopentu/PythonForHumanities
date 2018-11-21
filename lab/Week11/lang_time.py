@@ -3,7 +3,7 @@ from datetime import datetime
 
 def get_intent(input_text):
     m_dow = re.search("禮拜幾|星期幾", input_text)
-    m_daydiff = re.search("離.*?天", input_text)
+    m_daydiff = re.search("離.*天", input_text)
 
     if m_dow:
         intent = "ASK_WEEKDAY"
@@ -16,7 +16,7 @@ def get_intent(input_text):
 
 def get_date_slot(input_text):
     m_date = re.search(r"\d+/\d+/\d+", input_text)
-    m_now = re.search(r"(今天|現在)", input_text)
+    m_now = re.search(r"今天|現在", input_text)
 
     if m_date:
         date_str = m_date.group()
@@ -61,6 +61,4 @@ def main():
         print(resp)
 
 if __name__ == "__main__":
-    print("")
     main()
-    print("")
