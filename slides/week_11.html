@@ -24,6 +24,11 @@ title:  正規表示式
 ### 簡介
     </textarea>
   </section>
+  <section data-markdown data-background="https://media.giphy.com/media/uHox9Jm5TyTPa/giphy.gif">
+    <textarea data-template>
+      正規...? 是不是又要講奇怪的東西惹... <!-- .elements: style="color:yellow"-->
+    </textarea>
+  </section>
   <section data-markdown>
     <textarea data-template>
 這些都是一樣的東西：
@@ -53,6 +58,11 @@ Regex 不是 Python 特有的語法
   </section>
   <section data-markdown>
     <textarea data-template>
+Regex 是用來處理字串的方法，且自己有一套特殊的符號表示方法，可以很方便的搜尋字串、取代字串、刪除字串或測試字串是否符合樣式規則
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
 在 Python 中， import `re` 後即可開始使用
 
 ```python
@@ -60,7 +70,7 @@ import re
 ```
   </textarea>
   </section>
-  <section data-markdown>
+  <section data-markdown data-background="https://media.giphy.com/media/BDUSBSPnyfauc/giphy.gif">
     <textarea data-template>
 會寫正規讓你走到飛 ╰(°ㅂ°)╯
     </textarea>
@@ -97,6 +107,22 @@ import re
 </section>
 
 <section>
+  <section data-markdown>
+    <textarea data-template>
+### 常用語法
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
++ `re.search` 
++ `re.match` 
++ `re.findall` 
++ `re.sub`
+    </textarea>
+  </section>
+</section>
+
+<section>
   <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
     <textarea data-template>
 ###  練習
@@ -113,7 +139,23 @@ import re
     <textarea data-template>
 找出所有台大外文的老師姓名
 
-[連結](http://www.forex.ntu.edu.tw/members/teacher.php)
+[台大外文系所網站](http://www.forex.ntu.edu.tw/members/teacher.php)
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+找出56家族
+
+[尖叫！5566大復活　明年2月3缺1攻小巨蛋](https://www.ptt.cc/bbs/Gossiping/M.1533708773.A.1E5.html)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+把 __X__ 前後五個字都改成 __X__
+> 柯文哲造勢晚會情緒超嗨，說著說著，居然就講出疑似違反選罷法規定的內容。
+台北市長柯文哲：「或各種後援會只要錢一撒下去還是有X的實力，所以我才會講說藍
+的拿X、綠的拿X，除非我現在X以上那才會贏但是很清楚地，我們現在離X並沒有，所謂
+X所以變成說...。」
     </textarea>
   </section>
 </section>
