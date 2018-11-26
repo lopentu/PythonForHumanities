@@ -7,7 +7,107 @@ title:  基本中文文本資料分析
 <section>
   <section data-markdown>
     <textarea data-template>
+### 前處理 
+
+請先下載 [demo1.txt](./assets/src/week12/demo1.txt)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
 ### 讀取檔案
+
+```python
+with open('demo1.txt', 'r') as f:
+    data = f.read()
+```
+
+或
+
+```python
+f = open('demo1.html', 'r')
+data = f.read()
+f.close()
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+#### 全形半形正規化
+
+```python
+import unicodedata
+
+data = unicodedata.normalize('NFKC', data)
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 找出標題
+
+```python
+import re
+
+title_pat = re.compile(r'^(.+?)\n')
+title = title_pat.search(data).group(1)
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 找出發表時間
+
+```python
+time_pat = re.compile(r'出版時間:(\d\d\d\d/\d\d/\d\d \d\d:\d\d)')
+created_time = time_pat.search(data).group(1)
+```
+
+轉成 `datetime.datetime` 物件
+
+```python 
+from datetime import datetime
+
+created_time = datetime.strptime(created_time, '%Y/%m/%d %H:%M')
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 找出記者名字
+
+```python
+author_pat = re.compile(r'\(([一-龥]+)/[一-龥]+\)')
+author = author_pat.search(data).group(1)
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 去除括號內的文字
+
+```python
+data = re.sub(r'\(.+?\)', '', data)
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 找出主文
+
+```python
+text = data
+for pat in (title_pat, time_pat, author_pat):
+    text = pat.sub('', text)
+```
+
+或
+
+```python
+text = data
+text = title_pat.sub('', text)
+text = time_pat.sub('', text)
+text = author_pat.sub('', text)
+```
     </textarea>
   </section>
 </section>
@@ -15,7 +115,61 @@ title:  基本中文文本資料分析
 <section>
   <section data-markdown>
     <textarea data-template>
-### 
+### 斷詞
+
+請先安裝結巴斷詞
+
+```bash 
+pip install jieba
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+```python
+tokens = jieba.lcut(text)
+```
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+### 分析
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 計算詞彙豐富性
+
+```python
+types = list(set(tokens))
+
+vocabulary_richness = type / token
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 計算詞頻 
+
+```python
+from collections import Counter
+
+freqdict = Counter(tokens)
+```
+    </textarea>
+  </section>
+  <section data-markdown> 
+    <textarea data-template>
+### 列出高頻詞
+
+列出前20大高頻詞
+
+```python
+freqdict.most_common(20)
+```
     </textarea>
   </section>
 </section>
