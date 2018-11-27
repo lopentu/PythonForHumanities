@@ -22,7 +22,7 @@ Lab Session
 | 9.  | 11/07|  期中考準備                            |  [🔗][w9]  |
 | 10.  | 11/14|  （期中考）                           |
 | 11.  | 11/21|  樣式：正規表達式                      |  [🔗][w11]  |
-| 12.  | 11/28|  文字：分析中文文字資料                 |
+| 12.  | 11/28|  剖析：分析中文文字檔案                 |
 | 13.  | 12/05|  田野：網路資料蒐集                    |
 | 14.  | 12/12|  存取：檔案與資料讀寫                   |
 | 15.  | 12/19|  文本：電腦與自然語言                   |
@@ -38,6 +38,7 @@ Lab Session
 [w8]:https://docs.google.com/presentation/d/1BqbNGBqXJZSfIgwqNDNDFX_xu5yNtzfVZ7XWjJowJJo/edit?usp=sharing
 [w9]:https://docs.google.com/presentation/d/1GD2MC91HdEs-vKwjL_xY_mdThflVgk5YGsm3Ipj42vM/edit?usp=sharing
 [w11]:https://docs.google.com/presentation/d/1xZUbcX1haocGEn7O9FEiT8tnjy_z7ErYpzyyRVQRMjc/edit?usp=sharing
+[w12]:https://docs.google.com/presentation/d/1tXucAP3mRK0LfZBvJosEQjTJfgdJvxJOJO0uM1Shg6o/edit?usp=sharing
 
 
 Python 作為人文學群的程式語言
