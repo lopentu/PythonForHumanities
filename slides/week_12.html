@@ -9,7 +9,7 @@ title:  基本中文文本資料分析
     <textarea data-template>
 ### 前處理 
 
-請先下載 [demo1.txt](./assets/src/week12/demo1.txt)
+請先下載 <a href="./assets/src/week12/demo1.txt" download>demo1.txt</a>
     </textarea>
   </section>
   <section data-markdown>
@@ -146,7 +146,7 @@ tokens = jieba.lcut(text)
 ```python
 types = list(set(tokens))
 
-vocabulary_richness = type / token
+vocabulary_richness = len(types) / len(tokens) 
 ```
     </textarea>
   </section>
