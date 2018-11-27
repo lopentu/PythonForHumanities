@@ -110,6 +110,15 @@ text = author_pat.sub('', text)
 ```
     </textarea>
   </section>
+  <section data-markdown>
+    <textarea data-template>
+### 去除前後多餘換行符號
+
+```python
+text = text.strip('\n')
+```
+    </textarea>
+  </section>
 </section>
 
 <section>
@@ -119,6 +128,8 @@ text = author_pat.sub('', text)
 
 請先安裝結巴斷詞
 
+<i class="fas fa-exclamation-triangle"></i> 請在終端機中輸入 (不是在 `ipython` 裡面) 
+
 ```bash 
 pip install jieba
 ```
@@ -127,6 +138,8 @@ pip install jieba
   <section data-markdown>
     <textarea data-template>
 ```python
+import jieba
+
 tokens = jieba.lcut(text)
 ```
     </textarea>
@@ -141,11 +154,18 @@ tokens = jieba.lcut(text)
   </section>
   <section data-markdown>
     <textarea data-template>
-### 計算詞彙豐富性
+### 找出 word type
 
 ```python
 types = list(set(tokens))
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 計算詞彙豐富性
 
+```python
 vocabulary_richness = len(types) / len(tokens) 
 ```
     </textarea>
@@ -172,4 +192,22 @@ freqdict.most_common(20)
 ```
     </textarea>
   </section>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
+    <textarea data-template>
+### 補充 
+
+亦可透過第三方套件 `nltk` 來計算詞頻
+
+```bash
+pip install nltk
+```
+
+```python
+import nltk
+
+freqdist = nltk.FreqDist(tokens)
+```
+    </textarea>
+  </section>
+
 </section>
