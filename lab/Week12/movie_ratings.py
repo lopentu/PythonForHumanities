@@ -3,7 +3,7 @@ import re
 def load_movie_data(data_path):
     fmovie = open(data_path, "r", encoding="UTF-8")
     movies = {}
-    for line in fmovie.readlines():
+    for line in fmovie:
         mat = re.search(r"(.+)<(\d+)>: (.+)", line)
         if not mat:
             continue
@@ -25,24 +25,16 @@ def query_ratings(query_x, data):
     return results
 
 def main():
-    movie_data = load_movie_data("movie_ratings.txt")    
+    movie_data = load_movie_data("movie_ratings.txt")
     print("== 查詢IMDB電影評分 ==")
-    print("已載入{:,}部電影評分資料（2008年以後）".format(len(movie_data)))    
-    counter = 0
-    from datetime import datetime
-    t0 = datetime.now()
+    print("已載入{:,}部電影評分資料（2008年以後）".format(len(movie_data)))
+
     while True:
-        # query = input("輸入英文片名: ")
-        query = "ZDFAKLSJER"
+        query = input("輸入英文片名: ")
         if not query:
             break
-        results = query_ratings(query, movie_data)        
-        counter += 1
-        if counter > 1e3: break
-        # print(results)
-    print(f"{(datetime.now() - t0)} seconds")
+        results = query_ratings(query, movie_data)
+        print(results)
 
 if __name__ == "__main__":
-    print("")
     main()
-    print("")
