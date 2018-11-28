@@ -17,14 +17,14 @@ title:  基本中文文本資料分析
 ### 讀取檔案
 
 ```python
-with open('demo1.txt', 'r') as f:
+with open('demo1.txt', 'r', encoding='utf-8') as f:
     data = f.read()
 ```
 
 或
 
 ```python
-f = open('demo1.html', 'r')
+f = open('demo1.txt', 'r', encoding='utf-8')
 data = f.read()
 f.close()
 ```
