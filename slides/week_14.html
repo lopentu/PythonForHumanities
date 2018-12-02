@@ -1,0 +1,120 @@
+---
+layout: slide_pfh
+permalink: PythonForHumanities/slides/week14
+title: 資料存儲 
+---
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+### 基本操作
+
+```python
+open(file, mode='r', encoding=None)
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 讀取檔案
+
+```python 
+f = open('somefile.txt', 'r', encoding='utf-8'))
+data = f.read()
+f.close()
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 寫入檔案
+
+```python
+text = 'some text'
+f = open('somefile.txt', 'w', encoding='utf-8')
+f.write(text)
+f.close()
+```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
+    <textarea data-template>
+### 補充 
+
+`open` 的其他 `mode`
+
++ `mode='r+'`: 檔案同時為__讀取__與__寫入__模式
++ `mode='a'`: 檔案為__附加__模式（原本已存在部分不動，新增部分附加在後面）
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+### pickle 
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 優勢
+
++ 支援 Python 各種資料型別 
++ 方便 
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+### CSV 
+
+Comma-Separated Values
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 優勢
+
++ 可用 Excel 直接打開
++ 格式簡單
++ 體積小
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+### JSON
+
+JavaScript Object Notation
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 優勢
+
++ 跨語言相容性高
++ 易讀性高
++ 資料型別豐富
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+    </textarea>
+  </section>
+</section>
