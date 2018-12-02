@@ -50,6 +50,28 @@ f.close()
 </section>
 
 <section>
+  <section data-background-transition="zoom" data-background="#b5533c" data-markdown>
+    <textarea data-template>
+### 事前準備
+
+我們將以以下 `post` 當作練習對象 
+
+```python
+from datetime import datetime
+
+post = {
+    'title': '國際語言學奧賽 台灣中學生奪3獎',
+    'created_time': datetime(2016, 8, 3, 18, 18),
+    'url': 'https://tw.appledaily.com/new/realtime/20160803/921379/',
+    'reporter': '許卓非',
+    'location': '台北',
+}
+```
+    </textarea>
+  </section>
+</section>
+
+<section>
   <section data-markdown>
     <textarea data-template>
 ### pickle 
@@ -61,6 +83,31 @@ f.close()
 
 + 支援 Python 各種資料型別 
 + 方便 
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 轉換
+
+寫入
+
+```python 
+import pickle
+
+with open('post.pkl', 'wb') as f:
+    pickle.dump(post, f)
+```
+
+讀取
+
+```python
+with open('post.pkl', 'rb') as f:
+    data = pickle.load(f)
+```
+
+注意模式為 wb  <!-- .elements class="fragment current-visible" data-code-focus="3" -->
+
+注意模式為 rb  <!-- .elements class="fragment current-visible" data-code-focus="5" -->
     </textarea>
   </section>
 </section>
@@ -84,10 +131,23 @@ Comma-Separated Values
   </section>
   <section data-markdown>
     <textarea data-template>
-    </textarea>
-  </section>
-  <section data-markdown>
-    <textarea data-template>
+寫入
+
+```python
+import csv
+
+with open('post.csv', 'w') as f:
+    writer = csv.writer(f)
+    writer.writerow(post.values())
+```
+
+讀取
+
+```python
+with open('post.csv', 'r') as f:
+    rows = csv.reader(f)
+    data = list(rows)
+```
     </textarea>
   </section>
 </section>
@@ -111,10 +171,49 @@ JavaScript Object Notation
   </section>
   <section data-markdown>
     <textarea data-template>
+### 轉換
+
+寫入
+```python
+import json
+
+target = post.copy()
+target['created_time'] = str(target['created_time'])
+
+with open('post.json', 'w'):
+    json.dump(post, f)
+```
+
+讀取
+
+```python
+with open('post.json', 'r') as f:
+    data = json.load(f)
+```
+
+JSON 無法儲存 datetime 物件，必須要轉為其他型別 <!-- .elements class="fragment current-visible" data-code-focus="4" -->
     </textarea>
   </section>
   <section data-markdown>
     <textarea data-template>
+### 讓 JSON 正確顯示中文字 
+
+如果直接打開 `post.json`，會發現中文字  
+沒有「正確顯示」
+
+可以透過以下方式解決
+
+```
+import json
+
+target = post.copy()
+target['created_time'] = str(target['created_time'])
+
+with open('post.json', 'w'):
+    json.dump(post, f, ensure_ascii=False)
+```
+
+務必將 ensure_ascii 設定為 False <!-- .elements class="fragment current-visible" data-code-focus="7" -->
     </textarea>
   </section>
 </section>
