@@ -52,6 +52,38 @@ pip install BeautifulSoup4
   </section>
   <section data-markdown>
     <textarea data-template>
+```python
+import requests
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+自訂 __User Agent__
+
+```python
+headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36'}
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+擷取台大外文師資網頁
+
+```python
+url = 'http://www.forex.ntu.edu.tw/members/teacher.php' 
+response = requests.get(url, headers=headers)
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+找出原始碼
+
+```python
+response.encoding = 'utf-8'
+html = response.text
+```
     </textarea>
   </section>
 </section>
@@ -64,6 +96,112 @@ pip install BeautifulSoup4
   </section>
   <section data-markdown>
     <textarea data-template>
+將 `html` 轉為 `BeautifulSoup` 物件
+```python
+from bs4 import BeautifulSoup
+
+dom = BeautifulSoup(html, 'html.parser')
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+找出所有老師
+
+```python
+teachers = dom.find_all('div', class_='teacher_list')
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+找出所有老師的名字
+
+```python
+for teacher in teachers:
+    name = teacher.find_all('li')[1].find('a').text
+    print(name)
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+找出所有老師的 Email
+
+```python
+for teacher in teachers:
+    sub_dom = teacher.find('li', class_='mail')
+    if sub_dom:
+        email = sub_dom.find('a').attrs['href']
+        email = email.replace('mailto:', '')
+    else:
+        email = ''
+    print(email)
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+找出所有老師的職稱 
+
+```python
+for teacher in teachers:
+    job_title = teacher.find_all('li')[0]
+    job_title = job_title.text.replace('職稱:', '').strip()
+    print(job_title)
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+整合：找出所有老師的職稱、姓名以及 Email
+
+```python
+teacher_list = []
+for teacher in teachers:
+    name = teacher.find_all('li')[1].find('a').text
+
+    job_title = teacher.find_all('li')[0]
+    job_title = job_title.text.replace('職稱:', '').strip()
+
+    sub_dom = teacher.find('li', class_='mail')
+    if sub_dom:
+        email = sub_dom.find('a').attrs['href']
+        email = email.replace('mailto:', '')
+    else:
+        email = ''
+    teacher_list.append((name, job_title, email))
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+print 出來看一下
+
+```python
+from pprint import pprint
+
+pprint(teacher_list)
+```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
+    <textarea data-template>
+### 補充 
+
+安裝第三方套件 `tabulate`
+
+```bash
+pip install tabulate
+```
+
+`print`成表格
+
+```python
+from tabulate import tabulate
+
+print(tabulate(teacher_list, headers=['姓名', '職稱', 'Email']))
+```
     </textarea>
   </section>
 </section>
