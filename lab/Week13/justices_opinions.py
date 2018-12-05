@@ -72,7 +72,7 @@ def main():
     # Load and parse URLs above
     title_list = []
     for url_x in urls:
-        # import time; time.sleep(1);
+        import time; time.sleep(1);
         html_x = load_moj_justice(url_x)
         file_titles = parse_moj_justice(html_x)
         title_list.extend(file_titles)        
