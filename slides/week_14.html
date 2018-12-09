@@ -217,3 +217,45 @@ with open('post.json', 'w'):
     </textarea>
   </section>
 </section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+### 案例研究：蘋果新聞
+
+請先下載 <a href="./assets/src/week14/han.py" download>han.py</a>
+
+```python
+from han import posts
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+請轉存為：
+
+1. `pickle`
+1. `csv`
+1. `json`
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#0abab5" data-markdown>
+    <textarea data-template>
+### 補充 
+
+轉存為 Excel 
+
+請先安裝 `pandas` 以及 `openpyxl`
+```bash
+pip install pandas openpyxl
+```
+
+在 Python 中執行
+
+```python
+df = pandas.DataFrame(posts)
+df.to_excel('posts.xlsx')
+```
+    </textarea>
+  </section>
+</section>
