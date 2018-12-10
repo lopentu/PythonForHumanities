@@ -40,7 +40,7 @@ Lab Session
 [w11]:https://docs.google.com/presentation/d/1xZUbcX1haocGEn7O9FEiT8tnjy_z7ErYpzyyRVQRMjc/edit?usp=sharing
 [w12]:https://docs.google.com/presentation/d/1tXucAP3mRK0LfZBvJosEQjTJfgdJvxJOJO0uM1Shg6o/edit?usp=sharing
 [w13]:https://docs.google.com/presentation/d/16EkIuY1z9VJxEUCMmAE8l1z_Qt_LCjYfOZOWgMwVNhw/edit?usp=sharing
-
+[w14]:https://docs.google.com/presentation/d/1czltdRveXiN-58MrF8povT51vzZUC-JZqtM9w_M-Nf0/edit?usp=sharing
 
 Python 作為人文學群的程式語言
 -------------------------
