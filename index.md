@@ -37,7 +37,7 @@ repository_url: https://github.com/lopentu/PythonForHumanities
 |   11   |  11/21   |正規表示法應用                                |  [🔗][s11]|
 |   12   |  11/28   |基本中文文本資料分析                          |  [🔗][s12]|
 |   13   |  12/05   |網路文本資料擷取                              |  [🔗][s13]|
-|   14   |  12/12   |資料存儲                                      |           |
+|   14   |  12/12   |資料存儲                                      |  [🔗][s14]|
 |   15   |  12/19   |文本資料分析與自然語言處理套件介紹            |           |
 |   16   |  12/26   |資料視覺化套件介紹                            |           |
 |   17   |  01/02   |期末報告                                      |           | 
@@ -54,6 +54,7 @@ repository_url: https://github.com/lopentu/PythonForHumanities
 [s11]: ./slides/week11.html
 [s12]: ./slides/week12.html
 [s13]: ./slides/week13.html
+[s14]: ./slides/week14.html
 [w2]: {% post_url PythonForHumanities/2018-09-19-環境建置與編輯器安裝 %}
 [w3]: {% post_url PythonForHumanities/2018-09-26-程式編寫與執行基本概念 %}
 [w4]: {% post_url PythonForHumanities/2018-10-03-資料型態介紹 %}
