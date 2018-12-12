@@ -180,8 +180,8 @@ import json
 target = post.copy()
 target['created_time'] = str(target['created_time'])
 
-with open('post.json', 'w'):
-    json.dump(post, f)
+with open('post.json', 'w') as f:
+    json.dump(target, f)
 ```
 
 讀取
