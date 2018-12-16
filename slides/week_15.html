@@ -7,11 +7,76 @@ title: 文本資料分析與自然語言處理套件介紹
 <section>
   <section data-markdown>
     <textarea data-template>
+準備待會要使用的資料
+
+請先下載 <a href="./assets/src/week14/han.py" download>han.py</a>
+
+```python
+from han import posts
+```
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
 ### jieba
     </textarea>
   </section>
   <section data-markdown>
     <textarea data-template>
+#### 安裝
+
+```bash
+pip install jieba
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+以 `posts` 的第一篇主文作為範例：
+
+```python
+text = posts[0]['content']
+
+tokens = jieba.lcut(text)
+```
+
+如果是用 `jieba.cut` 的話，則是回傳 `generator`
+
+```python
+gen = jieba.cut(text)
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+#### 自定義字典
+
+`dict.txt` (名稱可自取)
+
+```text
+韓國瑜 1000
+香港 1000
+民主 1000
+```
+
+在 `jieba` 內加入自定義的字典
+```python
+jieba.set_dictionary('./dict.txt')
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+將所有 `posts` 的主文斷詞
+
+```python
+texts = []
+for post in posts:
+    texts.append(jieba.lcut(post['content']))
+```
     </textarea>
   </section>
 </section>
@@ -24,6 +89,90 @@ title: 文本資料分析與自然語言處理套件介紹
   </section>
   <section data-markdown>
     <textarea data-template>
+### 安裝
+
+```bash
+pip install nltk
+```
+    </textarea>
+  </section>
+
+  <section data-background-transition="zoom" data-background="#b5533c" data-markdown>
+    <textarea data-template>
+好書推薦
+
+
+![](https://covers.oreillystatic.com/images/9780596516499/lrg.jpg) <!-- .elements style="width:30%" -->
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+#### `nltk.text.Text`
+
+建立 [Concordance](https://en.wikipedia.org/wiki/Concordance_(publishing)
+
+```python
+tokens = []
+for text in texts:
+    tokens.extend(text)
+
+t = nltk.text.Text(tokens)
+t.concordance('韓國瑜', width=40, lines=50)
+```
+
+找出相似詞
+
+```python
+t.similar('韓國瑜')
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+#### `nltk.text.TextCollection`
+
+```python
+tc = nltk.text.TextCollection(texts)
+```
+
+計算 [TF-IDF](https://zh.wikipedia.org/wiki/Tf-idf)
+
+```python
+text = texts[0]
+
+data = []
+for token in set(text):
+    value = tc.tf_idf(token, text)
+    data.append((token, value))
+data.sort(key=lambda x: x[1], reverse=True)
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+#### `nltk.FreqDist`
+
+```python
+fdist = nlkt.FreqDist(text)
+```
+
+計算詞彙豐富性
+
+```python
+vocabulary_richness = fdist.B() / fdist.N() 
+```
+
+計算詞頻
+
+```python
+fdist.freq('政治')
+```
+
+找出 [hapax](https://en.wikipedia.org/wiki/Hapax_legomenon)
+
+```python
+fdist.hapaxes()
+```
     </textarea>
   </section>
 </section>
@@ -36,18 +185,54 @@ title: 文本資料分析與自然語言處理套件介紹
   </section>
   <section data-markdown>
     <textarea data-template>
-    </textarea>
-  </section>
-</section>
+#### 安裝
 
-<section>
-  <section data-markdown>
+```python
+pip install gensim
+```
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="#b5533c" data-markdown>
     <textarea data-template>
-### spaCy
+[官方文件](https://radimrehurek.com/gensim/index.html)
     </textarea>
   </section>
   <section data-markdown>
     <textarea data-template>
+#### [Word2vec](https://zh.wikipedia.org/wiki/Word2vec)
+
+準備資料
+```python
+with open('data.txt', 'w') as f:
+    for text in texts:
+        output = ' '.join(text)
+        f.write(output)
+    f.write('\n')
+```
+
+訓練模型
+
+```python
+import word2vec 
+
+sentences = word2vec.LineSentence('data.txt')
+model = word2vec.Word2Vec(sentences, size=250)
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+找出兩個詞的像似程度
+
+```python
+model.wv.similarity('政治', '抗議')
+```
+
+找出跟 *韓國瑜* 相似的詞
+
+```python
+model.wv.similar_by_word('韓國瑜')
+```
     </textarea>
   </section>
 </section>
