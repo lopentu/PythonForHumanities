@@ -38,6 +38,8 @@ pip install jieba
 以 `posts` 的第一篇主文作為範例：
 
 ```python
+import jieba
+
 text = posts[0]['content']
 
 tokens = jieba.lcut(text)
@@ -112,6 +114,8 @@ pip install nltk
 建立 [Concordance](https://en.wikipedia.org/wiki/Concordance_(publishing)
 
 ```python
+import nltk
+
 tokens = []
 for text in texts:
     tokens.extend(text)
@@ -153,7 +157,7 @@ data.sort(key=lambda x: x[1], reverse=True)
 #### `nltk.FreqDist`
 
 ```python
-fdist = nlkt.FreqDist(text)
+fdist = nltk.FreqDist(text)
 ```
 
 計算詞彙豐富性
@@ -203,6 +207,8 @@ pip install gensim
 
 準備資料
 ```python
+import gensim
+
 with open('data.txt', 'w') as f:
     for text in texts:
         output = ' '.join(text)
