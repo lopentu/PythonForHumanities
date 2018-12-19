@@ -38,8 +38,8 @@ def load_user_text(fpath):
     return tokens
 
 def main():
-    ori_text = load_ori_text("data/news.txt")
-    user_tokens = load_user_text("data/news.user.txt")
+    ori_text = load_ori_text("news.txt")
+    user_tokens = load_user_text("news.user.txt")
 
     print("--------------------")
     print("這是你的斷詞結果：")
