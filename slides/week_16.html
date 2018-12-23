@@ -1,0 +1,124 @@
+---
+layout: slide_pfh
+permalink: PythonForHumanities/slides/week16
+title: 資料視覺化套件介紹
+---
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+### 利用 Python 製作文字雲
+
+[amueller/word_cloud](https://github.com/amueller/word_cloud)
+    </textarea>
+  </section>
+  <section data-background-transition="zoom" data-background="assets/img/week16/wordcloud.png">
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 安裝 
+
+安裝 `wordcloud` 及相關套件
+```bash
+pip install wordcloud pillow numpy
+```
+
+安裝 `jieba`
+```bash
+pip install jieba
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 下載樣板
+
+[cloud.png](./assets/src/week16/cloud.png)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 下載中文字型
+
+[Google 思源黑體](https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKtc-hinted.zip)
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 下載 Sli.do 資料
+
+<a href="./assets/src/week16/slido.json" download>Sli.do 資料</a>
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+### 讀取資料 
+
+```python
+import json
+
+with open('./slido.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 斷詞
+
+```python
+import jieba
+
+tokens = []
+for d1 in data.values():
+    for d2 in d1['data']:
+        sent = d2['text']
+        res = jieba.lcut(sent)
+        tokens.extend(res)
+```
+    </textarea>
+  </section>
+  <section data-markdown>
+    <textarea data-template>
+### 製圖
+
+```python
+import numpy
+from PIL import Image
+from wordcloud import WordCloud
+
+mask = numpy.array(Image.open('./cloud.png'))
+wc = WordCloud(
+    font_path="./NotoSansCJKtc-Regular.otf",
+    background_color="black",
+    max_words=200,
+    mask=mask
+)
+wc.generate(' '.join(tokens))
+wc.to_file('wordcloud.png')
+```
+    </textarea>
+  </section>
+</section>
+<section>
+  <section data-markdown>
+    <textarea data-template>
+### 製作不同形狀的文字雲
+
+[draw.io](https://www.draw.io/)
+    </textarea>
+  </section>
+</section>
+
+<section>
+  <section data-background-transition="zoom" data-background="#2C3539" data-markdown>
+    <textarea data-template>
+### 練習
+
+將 <a href="./assets/src/week14/han.py" download>han.py</a> 中的新聞主文做成文字雲
+    </textarea>
+  </section>
+</section>
