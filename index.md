@@ -39,7 +39,7 @@ repository_url: https://github.com/lopentu/PythonForHumanities
 |   13   |  12/05   |網路文本資料擷取                              |  [🔗][s13]|
 |   14   |  12/12   |資料存儲                                      |  [🔗][s14]|
 |   15   |  12/19   |文本資料分析與自然語言處理套件介紹            |  [🔗][s15]|
-|   16   |  12/26   |資料視覺化套件介紹                            |           |
+|   16   |  12/26   |資料視覺化套件介紹                            |  [🔗][s16]|
 |   17   |  01/02   |期末報告                                      |           | 
 |   18   |  01/09   |期末報告繳交                                  |           | 
 
@@ -56,6 +56,7 @@ repository_url: https://github.com/lopentu/PythonForHumanities
 [s13]: ./slides/week13.html
 [s14]: ./slides/week14.html
 [s15]: ./slides/week15.html
+[s16]: ./slides/week16.html
 [w2]: {% post_url PythonForHumanities/2018-09-19-環境建置與編輯器安裝 %}
 [w3]: {% post_url PythonForHumanities/2018-09-26-程式編寫與執行基本概念 %}
 [w4]: {% post_url PythonForHumanities/2018-10-03-資料型態介紹 %}
