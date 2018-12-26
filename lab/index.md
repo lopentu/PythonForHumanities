@@ -26,7 +26,7 @@ Lab Session
 | 13.  | 12/05|  田野：網路資料蒐集                    |  [🔗][w13]  |
 | 14.  | 12/12|  存取：檔案與資料讀寫                   |  [🔗][w14]  |
 | 15.  | 12/19|  文本：電腦與自然語言                   |  [🔗][w15]  |
-| 16.  | 12/26|  展演：視覺化與呈現                     |
+| 16.  | 12/26|  展演：視覺化與呈現                     |  [🔗][w16]  |
 | 17.  | 01/02|  期末報告                             |
 | 18.  | 01/09|  繳交期末報告                          |
 
@@ -42,6 +42,7 @@ Lab Session
 [w13]:https://docs.google.com/presentation/d/16EkIuY1z9VJxEUCMmAE8l1z_Qt_LCjYfOZOWgMwVNhw/edit?usp=sharing
 [w14]:https://docs.google.com/presentation/d/1czltdRveXiN-58MrF8povT51vzZUC-JZqtM9w_M-Nf0/edit?usp=sharing
 [w15]:https://docs.google.com/presentation/d/10axw2qdwlOFBBklctvAnX5GRCXVnNW5r5zMh8NwLZQ4/edit?usp=sharing
+[w16]:https://docs.google.com/presentation/d/1lr7hmC5nM4U_uqWrGoe3Hbfsi7ATtagzc3yRch8rtL0/edit?usp=sharing
 
 Python 作為人文學群的程式語言
 -------------------------
